@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'CMU';
+    src:url('cmu.serif-roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    box-sizing: content-box; /* or unset */
+}
+body {
+    font-family: 'CMU', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: justify;
+
+   background: white;
+   /*linear-gradient(to bottom, white, lightgrey);*/
+}
+main{  padding: 1em;
+    margin-top: 100px;
+    text-align: justify;
+}
+header {
+    top:0;
+    font-size: 7pt;
+    background-color: NA;
+    color: #333;
+    position:relative; /* Use relative positioning */
+    height:100%;
+    left:50%;
+    transform: translateX(-50%) scale(0.5);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transform-origin: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform:translateX(-50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform:translateX(-50%) scale(1);
+    }
+}
+
+nav {
+    position: fixed;
+    top:0%;
+    bottom: 0%; /* You can adjust the top position if needed */
+    right: 0%; /* Align the navigation to the right */
+    width:15%; /* Adjust the width as needed */
+    background-color: #333; /* Add a background color for better visibility */
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+    justify-content: center; 
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.spacer {
+    height: 40px; /* Adjust the height as needed for testing */
+    background-color: NA; /* Optional: Add background color for better visibility */
+}
+/* Set initial state for all sections */
+.scrollfromleft {
+    opacity: 0;    
+    left:0%;
+    transform: translateX(0%);
+    position: relative;
+    top:50%;
+    bottom:50%;
+    height: 100vh;
+    width:75%; 
+}
+.image-container {
+    display: flex; /* Use flexbox to arrange images side by side */
+    justify-content: center; /* Center the images horizontally */
+  }
+/* Add slide-in animation to all sections with a delay */
+.scrollfromleft.animate {
+    animation: slideInFromLeft 0.5s ease-in-out 0.5s forwards; /* forwards fill mode */
+}
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(50%);
+    }
+    animation-iteration-count: 1;
+}
+.scrollfromright {    
+    opacity: 0;
+    right:0%;
+    top:50%;
+    bottom:50%;
+    position: relative;
+    height: 100vh;
+    width:75%; 
+    transform: translateX(100%); 
+}
+.scrollfromright.animate {
+    animation: slideInFromRight 0.5s ease-in-out 0.5s forwards  ; /* forwards fill mode */
+}
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);       
+    }
+    to {
+        opacity: 1;
+        transform: translateX(50%);       
+    }
+    animation-iteration-count: 1;
+}
+.section1 img,.section2 img{
+    max-width: 100%; /* Ensure the image doesn't exceed its container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+/* Add slide-out animation to all sections when scrolled away */
+.section1.scroll-away, .section2.scroll-away, .section3.scroll-away {
+    animation: fadeOut 0.5s ease-in 5s ease-out 5s forwards; /* forwards fill mode */
+}
+@keyframes fadeOut {
+     from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    animation-iteration-count: 1;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    bottom: 0;
+    left: 0; /* Center the header horizontally at 50% from the left */
+    right:0;
+    width: 100%;
+}
+#progress-container {
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: red;
+  }
+  
+  #progress-bar {
+    position:fixed;
+    bottom:0;
+    left:0;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+  }

@@ -4,35 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Your Custom Website</title>
+    <title>Joel Chavez</title>
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Custom Website</h1>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <p>Welcome  |    Bienvenue  |  Bienvenidos  </p>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <img src="images/circle_headshot_senate.png" alt="Headshot Portait">
+        <h2>Joel Chavez</h2>
+        <div class="spacer"></div>
+        <style>
+            @keyframes fade {
+              0%, 100% {
+                opacity: 0;
+              }
+              50% {
+                opacity: 1;
+              }
+            }
+            .fading-image {
+              animation: fade 2s infinite;
+            }
+          </style>
+<img src="images/arrow.png" alt="Headshot Portait" class="fading-image">
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section>
-            <h2>About Us</h2>
-            <p>This is a sample website created using HTML and CSS.</p>
+        <section id="section1" class="animate-on-scroll scrollfromleft scroll-section">
+            <p id="lefttext"> Howdy — I am a Ph.D. student in the Department of Government
+            at Georgetown University, splitting my time between Washington DC & the West Texas desert.  </p>
+            <div class="image-container"> 
+              <img src="images/dc-west-tx.png" alt="The White House and the Texas Desert">
+            </div>
+            <div class="spacer"></div>   
+          </section>
+
+          <section id="section2"class="animate-on-scroll scrollfromright scroll-section"> 
+            <p>With a focus on energy production markets, my research examines how state and federal policies engage areas 
+            with significant development to explore approaches local governments can take to limit negative externalities 
+            — such as those implied in the natural resource curse scholarship. </p> 
+            <div class="image-container"> 
+              <img src="images/us-counties.png" alt="Maps of the US">
+            </div>
+            <div class="spacer"></div>
+          </section>
+ 
+        <section id="section3" class="animate-on-scroll scrollfromleft scroll-section"> 
+          <div class="spacer"></div>   
+          <div class="spacer"></div>
+          <p id="lefttext">I am from Pecos, the namesake of a major river in the valley of the mountainous region in the Far West Texas desert. 
+            My hometown is quintessentially "Texan", being home of the world's first rodeo and situtated within the top area for oil and natural 
+            gas development in the Western Hemisphere. </p>
+            <div class="image-container"> 
+              <img src="images/Pecos.png" alt="Pecos TX Rodeo Picture">
+            </div>
+          <p>The town is also nestled between Texas' two National Parks — Big Bend NP & 
+            Guadalupe Mountains NP (shown in the ensuing photos). Hence, my interest in the sphere that is natural resource policy. 
+            I am a former champion rodeo cowboy, a diehard Texas Longhorn, and a solid golf scramble partner.</p>
+          <a href="#section1">Experience1</a>
+          <a href="#section2">Experience2</a>
+          <a href="#section3">Experience3</a>
         </section>
 
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email: contact@example.com</p>
+        <section id="section4" class="animate-on-scroll scrollfromright scroll-section">
+            <p>A 2023 Pascal Ngoboka Grant recipient from the Southwestern Political Science Association, 
+              I previously served as the 2021 Senate Hispanic Research Council Luna Graduate Fellow — ultimately 
+              becoming a lead natural resource and energy policy analyst in the Texas Senate. I earned my Master 
+              of Public Service & Administration in the public policy analysis track from The Bush School of 
+              Government at Texas A&M, where my concentration was in Energy/Environment/Technology Policy & Management (EETPM). 
+              I earned my bachelors degree from The University of Texas - Austin.</p> 
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2023 Your Custom Website. All rights reserved.</p>
+        <p>&copy; 2023 Joel Chavez. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

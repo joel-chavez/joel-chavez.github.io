@@ -1,23 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var sections = document.querySelectorAll('.animate-on-scroll');
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
-  
-    // Your existing code for section animations
-    var observer = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          if (!entry.target.classList.contains('animate')) {
-            entry.target.classList.add('animate');
-          }
-        } else {
-          entry.target.classList.remove('animate');
-        }
-      });
-    }, { threshold: 0 });
-  
-    sections.forEach(function(section) {
-      observer.observe(section);
-    });
-  
-
-  });
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    console.log(entry)
+    if(entry.isIntersecting){          
+      if (!entry.target.classList.contains('animate')) {
+        entry.target.classList.add('animate')
+      }
+    } 
+  })
+});
+const hiddenElements = document.querySelectorAll('.animate-on-scroll');
+hiddenElements.forEach((el)=> observer.observe(el));

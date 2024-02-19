@@ -67,7 +67,7 @@ footer {
   background-color:#000;
   color: #fff;
   text-align: center;
-  height: 5vh;
+  height: 7.5vh;
   bottom: 20vh; /* Center the header horizontally at 50% from the left */
   width:100%;
   position:fixed;
@@ -101,10 +101,10 @@ footer {
 .textScaleIn{
   font-size: xx-large;
   position: relative;  
-  background-color: rgba(255,255,255,0.5); 
+  background-color: rgba(255,255,255,0.75); 
   color:#000;
   text-align: justify;   
-  z-index: 4;
+  z-index: 5;
   top:0%;
   width:90%;
   left:5%;

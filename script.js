@@ -17,7 +17,7 @@ hiddenElements.forEach((el)=> observer.observe(el));
 
 function adjustImageScale() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const scaleFactor = isPortrait ? 1.5 : 1; // Increase scale in portrait mode
+  const scaleFactor = isPortrait ? 1.45 : 1; // Increase scale in portrait mode
   const images = document.querySelectorAll('.imageScaleIn, .imageFadeIn');
 
   images.forEach(img => {

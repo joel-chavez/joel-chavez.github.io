@@ -34,7 +34,7 @@ body {
 header {
     z-index: 5;
     background:scroll;
-    background-color:NA;c
+    background-color:white;
     color: #000;
     left: 0;
     position: absolute;
@@ -106,8 +106,8 @@ footer {
   text-align: justify;   
   z-index: 5;
   top:0%;
-  width:90%;
-  left:5%;
+  width:32.5%;
+  left:2.5%;
   display: flex; align-items:center; justify-content:center;
   transform:scale(0.25);
   opacity: 0.5;
@@ -120,20 +120,19 @@ footer {
   
 .imageScaleIn {
   z-index: 3;
-  left:5vw;  
-  width: 90vw; top:25vh;
-  height:40vh;
+   clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */
+height:40vh;left:37.5vw;  top:25vh;
   display: flex;
   background-color: transparent;
   align-items: center; 
   justify-content: center; text-align: center;
   will-change: position,transform,opacity;
-  transition: position 1.5s ease-in-out, transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: position 1s ease-in-out, transform 1s ease-in-out, opacity 1s ease-in-out;
   position: relative;
   transform:scale(0.25);
   opacity: 0;
 }
-.imageScaleIn img{width: 75%;}
+.imageScaleIn img{width: 100%;}
 
 .imageScaleIn.animate {
   transform: scale(1);  
@@ -143,9 +142,8 @@ footer {
 
 .imageFadeIn {
   z-index: 3;
-  left:5vw;  
-  width: 90vw; top:25vh;
-  height:40vh;
+  clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */
+  height:40vh;left:37.5vw;  top:25vh;
   display: flex;
   background-color: transparent;
   align-items: center; 
@@ -155,9 +153,12 @@ footer {
   position: relative;  
   opacity: 0;
 }
-.imageFadeIn img {width: 75%;}
+.imageFadeIn img {width: 100%;}
 .imageFadeIn.animate  {opacity:1; position:fixed;}
 
-
+.imgContainer {
+overflow:hidden;
+left:37.5vw;
+}
 
 .fading-image {animation: fade 2s ease-in-out 2s infinite;}

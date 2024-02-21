@@ -103,7 +103,7 @@ footer {
   position: relative;  
   background-color: rgba(255,255,255,0.75); 
   color:#000;
-  text-align: justify;   
+  text-align: right;   
   z-index: 5;
   top:0%;
   width:32.5%;
@@ -113,7 +113,7 @@ footer {
   opacity: 0.5;
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
-.sec3{text-align: left;align-items: normal;justify-content: left;}
+.sec3{text-align: right;align-items: normal;justify-content: right;}
 .textScaleIn.animate {
   transform:scale(1); opacity:1;
 }

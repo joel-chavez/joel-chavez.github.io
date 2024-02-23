@@ -30,3 +30,18 @@ function adjustImageScale() {
 // Call the function on page load and on window resize
 window.addEventListener('load', adjustImageScale);
 window.addEventListener('resize', adjustImageScale);
+
+
+function adjustTextWidth() {
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const widthFactor = isPortrait ? '95vw' : '32.5vw'; // Increase scale in portrait mod
+  const text = document.querySelectorAll('.textScaleIn');
+  text.forEach(text => {
+      text.style.width = widthFactor;
+
+  });
+}
+
+// Call the function on page load and on window resize
+window.addEventListener('load', adjustTextWidth);
+window.addEventListener('resize', adjustTextWidth);

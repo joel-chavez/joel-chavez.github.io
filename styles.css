@@ -67,8 +67,8 @@ footer {
   background-color:#000;
   color: #fff;
   text-align: center;
-  height: 7.5vh;
-  bottom: 20vh; /* Center the header horizontally at 50% from the left */
+  height: 5vh;
+  bottom: 10vh; /* Center the header horizontally at 50% from the left */
   width:100%;
   position:fixed;
   display:flex;
@@ -105,9 +105,9 @@ footer {
   color:#000;
   text-align: right;   
   z-index: 5;
-  top:0%;
-  width:32.5%;
-  left:2.5%;
+  top:0vh;
+  width:32.5vw;
+  right:0vw;
   display: flex; align-items:center; justify-content:center;
   transform:scale(0.25);
   opacity: 0.5;
@@ -131,7 +131,7 @@ height:40vh;left:37.5vw;  top:25vh;
   transform:scale(0.25);
   opacity: 0;
 }
-.imageScaleIn img{width: 100%;}
+.imageScaleIn img{width: 100vw;}
 
 .imageScaleIn.animate {
   transform: scale(1);  
@@ -152,7 +152,7 @@ height:40vh;left:37.5vw;  top:25vh;
   position: relative;  
   opacity: 0;
 }
-.imageFadeIn img {width: 100%;}
+.imageFadeIn img {width: 100vw;}
 .imageFadeIn.animate  {opacity:1; position:fixed;}
 
 .imgContainer {

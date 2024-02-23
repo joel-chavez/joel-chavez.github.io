@@ -37,7 +37,7 @@ function adjustTextPortait() {
   const text = document.querySelectorAll('.textScaleIn');
   text.forEach(text => {
     if(isPortrait) {
-      text.style.width='92.5vw';
+      text.style.width='90vw';
       text.style.textAlign = 'center';
       text.style.left='2.5vw';
       text.style.right='2.5vw';

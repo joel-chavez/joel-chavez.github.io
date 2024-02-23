@@ -116,7 +116,7 @@ footer {
 .textScaleIn.animate {
   transform:scale(1); opacity:1;
 }
-  
+
 .imageScaleIn {
   z-index: 3;
    clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */

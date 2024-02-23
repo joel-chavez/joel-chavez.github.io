@@ -15,7 +15,7 @@ const observer = new IntersectionObserver((entries)=>{
 const hiddenElements = document.querySelectorAll('.animate-on-scroll');
 hiddenElements.forEach((el)=> observer.observe(el));
 
-function adjustImageScale() {
+function adjustPortaitImage() {
   const isPortrait = window.innerHeight > window.innerWidth;
   const scaleFactor = isPortrait ? 1.5 : 1; // Increase scale in portrait mod
   const leftDistance = isPortrait ? '5vw' : '37.5vw'; // Adjust left distance based on orientation
@@ -28,20 +28,27 @@ function adjustImageScale() {
 }
 
 // Call the function on page load and on window resize
-window.addEventListener('load', adjustImageScale);
-window.addEventListener('resize', adjustImageScale);
+window.addEventListener('load', adjustPortaitImage);
+window.addEventListener('resize', adjustPortaitImage);
 
 
-function adjustTextWidth() {
+function adjustTextPortait() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const widthFactor = isPortrait ? '95vw' : '32.5vw'; // Increase scale in portrait mod
   const text = document.querySelectorAll('.textScaleIn');
   text.forEach(text => {
-      text.style.width = widthFactor;
-
+    if(isPortrait) {
+      text.style.width='92.5vw';
+      text.style.textAlign = 'center';
+      text.style.left='2.5vw';
+      text.style.right='2.5vw';
+  } else {
+    text.style.width='32.5vw';
+    text.style.textAlign = 'right';
+    text.style.left='0.5vw';
+    text.style.right='0vw';  }
   });
 }
 
 // Call the function on page load and on window resize
-window.addEventListener('load', adjustTextWidth);
-window.addEventListener('resize', adjustTextWidth);
+window.addEventListener('load', adjustTextPortait);
+window.addEventListener('resize', adjustTextPortait);

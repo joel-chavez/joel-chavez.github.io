@@ -148,7 +148,7 @@ height:40vh;left:37.5vw;  top:25vh;
   align-items: center; 
   justify-content: center; text-align: center;
   will-change: position, opacity;
-  transition: position 1s ease-in-out 1s, opacity 1s ease-in-out 1s;
+  transition: position 1s ease-in-out 1s, opacity 0.5s ease-in-out 0s;
   position: relative;  
   opacity: 0;
 }

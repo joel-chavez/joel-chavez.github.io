@@ -15,11 +15,11 @@ const observer = new IntersectionObserver((entries)=>{
 const hiddenElements = document.querySelectorAll('.animate-on-scroll');
 hiddenElements.forEach((el)=> observer.observe(el));
 
-function adjustPortaitImage() {
+function adjustFadeInPortaitImg() {
   const isPortrait = window.innerHeight > window.innerWidth;
   const scaleFactor = isPortrait ? 1.6 : 1; // Increase scale in portrait mod
   const leftDistance = isPortrait ? '-13vw' : '37.5vw'; // Adjust left distance based on orientation
-  const images = document.querySelectorAll('.imageScaleIn, .imageFadeIn');
+  const images = document.querySelectorAll('.imageFadeIn');
   images.forEach(img => {
       img.style.transform = `scale(${scaleFactor})`;
       img.style.left = leftDistance;
@@ -28,8 +28,8 @@ function adjustPortaitImage() {
 }
 
 // Call the function on page load and on window resize
-window.addEventListener('load', adjustPortaitImage);
-window.addEventListener('resize', adjustPortaitImage);
+window.addEventListener('load', adjustFadeInPortaitImg);
+window.addEventListener('resize', adjustFadeInPortaitImg);
 
 
 function adjustTextPortait() {

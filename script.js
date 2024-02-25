@@ -23,8 +23,8 @@ function adjustFadeInPortaitImg() {
   const isPortrait = window.innerHeight > window.innerWidth;
   const scaleFactor = isPortrait ? 1.6 : 1; // Increase scale in portrait mod
   const leftDistance = isPortrait ? '-13vw' : '37.5vw'; // Adjust left distance based on orientation
-  const images = document.querySelectorAll('.imageFadeIn');
-  images.forEach(img => {
+  const fadeImages = document.querySelectorAll('.imageFadeIn');
+  fadeImages.forEach(img => {
       img.style.transform = `scale(${scaleFactor})`;
       img.style.left = leftDistance;
 
@@ -41,14 +41,15 @@ function adjustTextPortait() {
   const text = document.querySelectorAll('.textScaleIn');
   text.forEach(text => {
     if(isPortrait) {
-      text.style.width='90vw';
-      text.style.textAlign = 'center';
-      text.style.left='2.5vw';
-      text.style.right='2.5vw';
+      text.style.width='100vw';
+      text.style.textAlign = 'justify';
+      text.style.left='0vw';
+      text.style.right='0vw';
+      text.style.margin='5vw'
   } else {
     text.style.width='32.5vw';
     text.style.textAlign = 'right';
-    text.style.left='0.5vw';
+    text.style.left='0vw';
     text.style.right='0vw';  }
   });
 }

@@ -38,8 +38,8 @@ header {
     color: #000;
     left: 0;
     position: absolute;
-    height:100vh;
-    top: 40vh;
+    height:140vh;
+    top: 0vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -49,8 +49,8 @@ header {
     animation: slideUpHeader 1s ease-in-out 1s forwards;
 }
 @keyframes slideUpHeader {
-    from {top: 40vh;}
-    to {top: 0vh;}
+    from {top: 0vh;}
+    to {top: -40vh;}
 }
 .headerContainer{height:100%;width:100%;background-color: NA;z-index: 9999999999;}
 .arrow-container{bottom:10%;display: flex; 
@@ -67,17 +67,13 @@ footer {
   background-color:#000;
   color: #fff;
   text-align: center;
-  height: 5vh;
-  bottom: 10vh; /* Center the header horizontally at 50% from the left */
+  height: 7vh;
+  bottom: 0vh; /* Center the header horizontally at 50% from the left */
   width:100%;
   position:fixed;
-  display:flex;
-  flex-direction: row;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
   z-index: 10;
   animation: slideDownFooter 1s ease-in-out 1s forwards; 
+  margin: 0%;
 }
 
 @keyframes slideDownFooter {

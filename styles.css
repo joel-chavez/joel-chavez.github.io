@@ -92,17 +92,17 @@ footer {
 }
 .scrollContainer{
   display: flex; flex-direction: column;
-  background-color:white;
+  background-color: rgba(255,255,255,0.75); 
   overflow: visible;
-  width:100vw;
+  width:100vw;left:0vw;
 }
 .textScaleIn{
+  padding-left: 2.5vw;padding-right: 2.5vw;
   font-size: xx-large;
   position: relative;  
   background-color: rgba(255,255,255,0.75); 
   color:#000;
   overflow: visible;
-
   text-align: right;   
   z-index: 5;
   top:0vh;

@@ -45,7 +45,7 @@ function adjustTextPortait() {
       text.style.textAlign = 'justify';
       text.style.left='0vw';
       text.style.right='0vw';
-      text.style.margin='5vw'
+      text.style.margin='0vw'
   } else {
     text.style.width='32.5vw';
     text.style.textAlign = 'right';

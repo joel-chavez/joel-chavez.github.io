@@ -93,7 +93,7 @@ footer {
   background-repeat: no-repeat;
   background-position-y: top;
   background-position-x: center;*/
-  color: #fff;
+  background-color: #000;
   text-align: center;
   height: 7vh;
   bottom: 0vh; /* Center the header horizontally at 50% from the left */

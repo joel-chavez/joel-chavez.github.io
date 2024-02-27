@@ -31,6 +31,17 @@ body {
    /*linear-gradient(to bottom, white, lightgrey);*/
 }
 
+@media (orientation: portrait) {
+  body{
+    font-size:large;
+  }
+}
+@media (orientation: landscape) {
+  body{
+    font-size:x-large;
+  }
+}
+
 header {
     z-index: 5;
     background:scroll;
@@ -62,9 +73,26 @@ header {
   50%  {transform: translate(0, 25%);opacity: 1;}
   100%   {transform: translate(0, -0%);opacity: 0.25;}
 }
+@media (orientation: portrait) {
+  .headShot{
+    width: 50vw;
+  }
+}
+@media (orientation: landscape) {
+  .headShot{
+    width: 20vw;
+  }
+}
+
+
 
 footer {
-  background-color:#000;
+  /*background-color: #44362C;
+  background-image:url("images/swPattern.png");
+  background-size:75%;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: center;*/
   color: #fff;
   text-align: center;
   height: 7vh;
@@ -98,7 +126,7 @@ footer {
 }
 .textScaleIn{
   padding-left: 2.5vw;padding-right: 2.5vw;
-  font-size: xx-large;
+  font-size: xxx-large;
   position: relative;  
   background-color: rgba(255,255,255,0.75); 
   color:#000;

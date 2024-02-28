@@ -64,10 +64,10 @@ header {
     to {top: -40vh;}
 }
 .headerContainer{height:100%;width:100vw;background-color:NA;z-index:10;}
-.arrow-container{bottom:10vh;display: flex; 
+.arrow-container{display: flex; flex-direction: column;
   justify-content: center; align-items: center; z-index: 100;
   opacity: 0;
-  animation: floating 2.5s infinite ease-in-out 2s;}
+  animation: floating 2.5s infinite ease-in-out 3s;}
 @keyframes floating {
   0% {transform: translate(0,  0%);opacity: 0.25;}
   50%  {transform: translate(0, 25%);opacity: 1;}

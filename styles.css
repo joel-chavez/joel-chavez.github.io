@@ -94,21 +94,19 @@ footer {
   background-position-y: top;
   background-position-x: center;*/
 padding: 0%;  
-position:fixed;
   background-color: #000;
   height: 10vh;
-  bottom: 0vh; /* Center the header horizontally at 50% from the left */
+  bottom: -200vh; /* Center the header horizontally at 50% from the left */
   width:100%;
-
-
-  z-index: 10;
+  z-index: 9;
   animation: slideDownFooter 1s ease-in-out 1s forwards; 
   margin: 0%;
+  position:relative;
 }
 
 @keyframes slideDownFooter {
-    from {bottom: 20vh;}
-    to {bottom: 0vh;}
+    from {bottom: -100vh;position:relative;}
+    to {bottom: 0vh;position:fixed;}
 }
 
 .link{

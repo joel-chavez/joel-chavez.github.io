@@ -35,13 +35,13 @@ body {
   from {transform:scale(0);opacity: 0;}
   to {transform:scale(1);opacity:1;}
 }
-}
+
 @media (orientation: portrait) {
   body{
     font-size:xxx-large;
   }
   .headShot{
-    width: 750px;
+    width: 75vw;
   }
 }
 

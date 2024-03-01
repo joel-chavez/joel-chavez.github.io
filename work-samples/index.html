@@ -11,6 +11,7 @@
         body {
             margin: 0;
             padding: 0;
+            top:0vh;
             display: flex;
             flex-direction: column; /* Align items in a column */
             align-items: center; /* Center items horizontally */
@@ -19,29 +20,37 @@
     </style>
 </head>
 <body>
-    <div style="height: 25vh;"></div>
+    <div style="height: 5vh;"></div>
     <h1 style="text-align: center;">Work Samples</h1>
     <div style="text-align: left; top:50%;">
     <p><a href="/work-samples/SB2087.html">Texas Senate Bill 2087</a>  |  App prepared for Texas Legislature (87th Regular Session)</p>
     <p><a href="/work-samples/HighSpeedRail.html"> Northeast High Speed Rail Texas </a> |  Presentation prepared for Embassy of Japan, NE Maglev, and Central Japan Railway</p>
     <p><a href="/work-samples/TxGasFlaring.html"> Flaring Policy in Texas </a> |  Presentation prepared for the Texas Public Policy Foundation</p>
 </div>
-<footer>      
-    <p style="width:100vw;height:2vh;
+<footer class="animate-on-scroll">      
+    <div style="top:0vh;"><p style="width:100vw;line-height:1vh;
     display:flex;
     flex-direction: row;
     align-content: center;
     text-align: center;
-    justify-content: center;">
+    justify-content:flex-start;top:0vh;">
     <a class="headerContainer" href="/" style="color:white;text-decoration: none;"> Home </a>
     <a class="headerContainer" style="width:20vw;"></a>
     <a class="headerContainer" href="/c-v" style="color: white; text-decoration: none;"> C.V. </a>
     <a class="headerContainer" style="width:20vw;"></a>
-    <a class="headerContainer" href="/work-samples" style="color: tan; text-decoration: underline;"> Work Samples </a> 
-  </p>
-  <p style="color:#444444;height: 2vh; text-align: right;display: flex;flex-direction: column;justify-content: flex-end;">
-    &copy; 2023 Joel Chavez. All rights reserved.
-  </p>
+    <a class="headerContainer" href="/work-samples" style="color: tan; text-decoration:underline ;"> Work Samples </a> 
+  </p></div>
+  <div style="
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0vh;">
+  <p style="color:#333333; text-align: center;font-size: small;">
+      &copy; 2023 Joel Chavez. All rights reserved.
+  </p></div>
 </footer>
 </body>
 </html>

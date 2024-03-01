@@ -42,6 +42,7 @@ body {
   }
   .headShot{
     width: 50vw;
+
   }
 }
 
@@ -88,6 +89,13 @@ header {
   0% {opacity: 0.5;}
   50%  {opacity: 1;}
   100%   {opacity: 0.5;}
+}
+
+.glow::before{
+animation: inherit;  
+}
+.glow::after{
+animation:inherit,
 }
 .arrow-container{display: flex; flex-direction: column;
   justify-content: center; align-items: center; z-index: 100;
@@ -136,18 +144,18 @@ footer {
   display: flex; flex-direction: column;
   background-color: rgba(255,255,255,0.75); 
   overflow: visible;
-  width:100vw;left:0vw;
+  width:100vw;
 }
 .textScaleIn{
-  padding-left: 2.5vw;padding-right: 2.5vw;
+  padding-left: 1vw;padding-right: 1vw;
   position: relative;  
   background-color: rgba(255,255,255,0.9); 
   color:#000;
   overflow: visible;
   text-align: right;   
   z-index: 5;
-  top:0vh;
-  width:35vw;
+  top:50vh;
+  width:25vw;
   left:0vw;
   display: flex; align-items:center; justify-content:center;
   transform:scale(0.25);
@@ -160,19 +168,19 @@ footer {
 
 .imageScaleIn {
   z-index: 3;
-   clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */
-  height:40vh;left:37.5vw;  top:20vh;
+  width:75vw;left:25vw;top:-5vh;
+
   display: flex;
   background-color: transparent;
   align-items: center; 
   justify-content: center; text-align: center;
-  will-change: position,transform,opacity;
-  transition: position 1s ease-in-out, transform 1s ease-in-out, opacity 1s ease-in-out;
-  position: relative;
   transform:scale(0.25);
   overflow: visible;
-
   opacity: 0;
+  position: relative;
+  will-change: position,transform,opacity;
+  transition: position 1s ease-in-out 0.5, transform 1s ease-in-out 0.5, opacity 1s ease-in-out 0.5;
+
 }
 .imageScaleIn img{width: 100vw;}
 
@@ -183,32 +191,31 @@ footer {
 }
 @media (orientation: portrait) {
   .imageScaleIn.animate{
-    transform: scale(1.6);  
+    top:25vh;
+    transform: scale(2.1);  
     opacity: 1;
     position:fixed;
-    left: -13vw;
+    left: 0vw;
   }
 }
+
 .imageFadeIn {
   overflow: visible;
   z-index: 3;
   clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */
-  height:40vh;left:37.5vw;  top: 20vh;
+  width:75vw;left:25vw;  top: -5vh;
   display: flex;
+  position: relative;  
+  opacity: 0;
   background-color: transparent;
   align-items: center; 
   justify-content: center; text-align: center;
   will-change: position, opacity;
   transition: position 1s ease-in-out, opacity 1s ease-in-out 0.5s;
-  position: relative;  
-  opacity: 0;
+
 }
 .imageFadeIn img {width: 100vw;}
 .imageFadeIn.animate  {opacity:1; position:fixed;}
 
-.imgContainer {
-overflow:hidden;
-left:37.5vw;
-}
 
 .fading-image {animation: fade 2s ease-in-out 2s infinite;}

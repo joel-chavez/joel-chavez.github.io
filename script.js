@@ -2,7 +2,7 @@ window.onbeforeunload = function () {
   window.scrollTo(-10, -10);
 }
 function topScroll(){
-  window.scrollTo(0, 0);
+  window.scrollTo(-10, -10);
 }
 window.addEventListener('reload', topScroll);
 
@@ -17,16 +17,20 @@ const observer = new IntersectionObserver((entries)=>{
   })
 });
 const hiddenElements = document.querySelectorAll('.animate-on-scroll');
+
 hiddenElements.forEach((el)=> observer.observe(el));
 
 function adjustFadeInPortaitImg() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const scaleFactor = isPortrait ? 1.6 : 1; // Increase scale in portrait mod
-  const leftDistance = isPortrait ? '-13vw' : '37.5vw'; // Adjust left distance based on orientation
+  const scaleFactor = isPortrait ? 2.1 : 1; // Increase scale in portrait mod
+  const leftDistance = isPortrait ? '0vw' : '25vw'; // Adjust left distance based on orientation
+  const topDistance = isPortrait ?'25vh' : '-5vh'; // Increase scale in portrait mod
+
   const fadeImages = document.querySelectorAll('.imageFadeIn');
   fadeImages.forEach(img => {
       img.style.transform = `scale(${scaleFactor})`;
       img.style.left = leftDistance;
+      img.style.top=topDistance
 
   });
 }
@@ -47,7 +51,7 @@ function adjustTextPortait() {
       text.style.right='0vw';
       text.style.margin='0vw'
   } else {
-    text.style.width='32.5vw';
+    text.style.width='25vw';
     text.style.textAlign = 'right';
     text.style.left='0vw';
     text.style.right='0vw';  }

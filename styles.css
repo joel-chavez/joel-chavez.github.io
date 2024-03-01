@@ -44,6 +44,7 @@ body {
     width: 50vw;
 
   }
+  footer{font-size:x-large;}
 }
 
 @media (orientation: landscape) {

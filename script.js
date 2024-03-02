@@ -30,7 +30,7 @@ function adjustFadeInPortaitImg() {
   fadeImages.forEach(img => {
       img.style.transform = `scale(${scaleFactor})`;
       img.style.left = leftDistance;
-      img.style.top=topDistance
+      img.style.top=topDistance;
 
   });
 }

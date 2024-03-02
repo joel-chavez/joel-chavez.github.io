@@ -84,20 +84,19 @@ header {
 .welcome-container{display: flex; flex-direction: column;
   justify-content: center; align-items: center; z-index: 100;}
 .welcome-text{opacity:0;
-  animation: glow 2.5s infinite ease-in-out 0.5s;}
+  animation: glow25 8s infinite ease-in-out;}
 
-  @keyframes glow{
-  0% {opacity: 0.5;}
+  @keyframes glow25{
+  0% {opacity: 0.25;}
   50%  {opacity: 1;}
-  100%   {opacity: 0.5;}
+  100%   {opacity: 0.25;}
+}
+@keyframes glow75{
+  0% {opacity: 0.75;}
+  50%  {opacity: 1;}
+  100%   {opacity: 0.75;}
 }
 
-.glow::before{
-animation: inherit;  
-}
-.glow::after{
-animation:inherit,
-}
 .arrow-container{display: flex; flex-direction: column;
   justify-content: center; align-items: center; z-index: 100;
   opacity: 0;
@@ -143,10 +142,13 @@ footer {
 }
 .scrollContainer{
   display: flex; flex-direction: column;
-  background-color: rgba(255,255,255,0.75); 
+  background-color: rgba(255,255,255,0); 
   overflow: visible;
   width:100vw;
 }
+
+
+
 .textScaleIn{
   padding-left: 1vw;padding-right: 1vw;
   position: relative;  
@@ -170,40 +172,76 @@ footer {
 .imageScaleIn {
   z-index: 3;
   width:75vw;left:25vw;top:-5vh;
-
   display: flex;
   background-color: transparent;
   align-items: center; 
   justify-content: center; text-align: center;
-  transform:scale(0.25);
+  transform:scale(1);
   overflow: visible;
   opacity: 0;
   position: relative;
   will-change: position,transform,opacity;
-  transition: position 1s ease-in-out 0.5, transform 1s ease-in-out 0.5, opacity 1s ease-in-out 0.5;
-
+  transition: 
+    transform 1s ease-in-out 0.5s, 
+    opacity 1s ease-in-out 0.5s,
+    position 1s ease-in-out 0.5s,
 }
+
 .imageScaleIn img{width: 100vw;}
 
 .imageScaleIn.animate {
-  transform: scale(1);  
-  opacity: 1;
-  position:fixed;
+  animation: scaleInFadeOnce 3s ease-in-out 0.5s forwards;
 }
-@media (orientation: portrait) {
-  .imageScaleIn.animate{
-    top:25vh;
-    transform: scale(2.1);  
+
+@keyframes scaleInFadeOnce {
+  0% {
+    transform: scale(0.25);
+    opacity: 0;
+    position:fixed;
+  }
+  33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
+    opacity: 0.75;
+  }
+  100% {
     opacity: 1;
     position:fixed;
-    left: 0vw;
+
   }
 }
 
+@media (orientation: portrait) {
+  .imageScaleIn{transform:scale(2.1); left:0vw; top:25vh;  }
+  .imageScaleIn.animate {
+    animation: scaleInFadeOncePort 3s ease-in-out 0.5s forwards;
+  }
+  
+  @keyframes scaleInFadeOncePort {
+    0% {
+      transform: scale(0.25);
+      opacity: 0;
+      position:fixed;
+    }
+    33% {
+      transform: scale(2.1);
+      opacity: 1;
+    }
+    67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+      position:fixed;
+  
+    }
+  }
+}
 .imageFadeIn {
   overflow: visible;
   z-index: 3;
-  clip-path: inset(0 0 0 37.5); /* Clips 30vw from the left of the image */
   width:75vw;left:25vw;  top: -5vh;
   display: flex;
   position: relative;  
@@ -212,11 +250,34 @@ footer {
   align-items: center; 
   justify-content: center; text-align: center;
   will-change: position, opacity;
-  transition: position 1s ease-in-out, opacity 1s ease-in-out 0.5s;
+  transition: 
+    position 1s ease-in-out 0.5s, 
+    opacity 1s ease-in-out 0.5s;
 
 }
-.imageFadeIn img {width: 100vw;}
-.imageFadeIn.animate  {opacity:1; position:fixed;}
-
-
-.fading-image {animation: fade 2s ease-in-out 2s infinite;}
+.imageFadeIn.animate {
+  animation: fadeInFadeOncePort 3s ease-in-out 0.5s forwards;
+}
+@media (orientation: portrait) {
+  .imageFadeIn{transform:scale(2.1); left:0vw; top:25vh;  }
+  .imageFadeIn.animate {
+    animation: fadeInFadeOncePort 3s ease-in-out 0.5s forwards;
+  }
+}
+  @keyframes fadeInFadeOncePort {
+    0% {
+      opacity: 0;
+      position:fixed;
+    }
+    33% {
+      opacity: 1;
+    }
+    67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+      position:fixed;
+  
+    }
+  }

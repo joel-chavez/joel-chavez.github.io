@@ -261,7 +261,7 @@ footer {
 @media (orientation: portrait) {
   .imageFadeIn{transform:scale(2.1); left:0vw; top:25vh;  }
   .imageFadeIn.animate {
-    animation: fadeInFadeOncePort 3s ease-in-out 0.5s forwards;
+    animation: fadeInFadeOncePort 1.5s ease-in-out 1s forwards;
   }
 }
   @keyframes fadeInFadeOncePort {

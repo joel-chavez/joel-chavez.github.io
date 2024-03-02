@@ -256,28 +256,24 @@ footer {
 
 }
 .imageFadeIn.animate {
-  animation: fadeInFadeOncePort 3s ease-in-out 0.5s forwards;
+  animation: fadeInGlowOnce 3s infinite ease-in-out 2s forwards;
 }
 @media (orientation: portrait) {
   .imageFadeIn{transform:scale(2.1); left:0vw; top:25vh;  }
   .imageFadeIn.animate {
-    animation: fadeInFadeOncePort 1.5s ease-in-out 1s forwards;
+    animation: fadeInGlowOnce 1.5s ease-in-out 2s forwards;
   }
 }
-  @keyframes fadeInFadeOncePort {
+  @keyframes fadeInGlowOnce {
     0% {
-      opacity: 0;
+      opacity: 1;
       position:fixed;
     }
-    33% {
-      opacity: 1;
-    }
-    67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
-      opacity: 0.8;
+    50% {
+      opacity: 0.9;
     }
     100% {
       opacity: 1;
       position:fixed;
-  
     }
   }

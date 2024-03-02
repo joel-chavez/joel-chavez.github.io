@@ -1,10 +1,7 @@
 window.onbeforeunload = function () {
   window.scrollTo(-10, -10);
 }
-function topScroll(){
-  window.scrollTo(-10, -10);
-}
-window.addEventListener('reload', topScroll);
+
 
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{

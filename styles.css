@@ -257,7 +257,7 @@ footer {
 
 }
 .imageFadeIn.animate {
-  animation: fadeInGlowOnce 3s infinite ease-in-out 2s forwards;
+  animation: fadeInGlowOnce 3s ease-in-out 2s forwards;
 }
 @media (orientation: portrait) {
   .imageFadeIn{transform:scale(2.1); left:0vw; top:25vh;  }
@@ -267,13 +267,13 @@ footer {
 }
   @keyframes fadeInGlowOnce {
     0% {
-      opacity: 1;
+      opacity: 0;
       position:fixed;
     }
     50% {
       opacity: 0.9;
     }
-    100% {
+    25%,100% {
       opacity: 1;
       position:fixed;
     }

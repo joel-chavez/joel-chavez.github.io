@@ -81,7 +81,7 @@ header {
 
 .headerContainer{height:100%;width:100vw;background-color:NA;z-index:10;}
 
-.welcome-container{display: flex; flex-direction: column;
+.welcome-container{width:100vw;display: flex; flex-direction: column;
   justify-content: center; align-items: center; z-index: 100;}
 .welcome-text{opacity:0;
   animation: glow25 8s infinite ease-in-out;}

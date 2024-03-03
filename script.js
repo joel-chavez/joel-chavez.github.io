@@ -1,10 +1,24 @@
-window.onload = function() {
-// Check if the current domain is not the target domain
-  if (window.location.hostname !== "https://realjoelchavez.com") {
-    // Redirect to the target URL
-   window.location.href = "https://realjoelchavez.com";
-  }
+// Set main domain
+var targetURL = "https://realjoelchavez.com";
+
+
+// Parse the target URL
+var parser = document.createElement('a');
+parser.href = targetURL;
+
+// Get hostname and pathname from target URL
+var targetHostname = parser.hostname.replace('www.', '');
+var targetPathname = parser.pathname.replace(/\/$/, '');
+
+// Get current page's hostname and pathname, normalized
+var currentHostname = window.location.hostname.replace('www.', '');
+var currentPathname = window.location.pathname.replace(/\/$/, '');
+
+// Redirect only if both hostname and pathname do not match
+if (currentHostname !== targetHostname || currentPathname !== targetPathname) {
+    window.location.href = targetURL;
 }
+
 
 window.onbeforeunload = function () {
   window.scrollTo(-10, -10);

@@ -187,7 +187,7 @@ footer {
     position 1s ease-in-out 0.5s,
 }
 
-.imageScaleIn img{width: 100vw;}
+.imageScaleIn img{width: 100vw;height:auto;}
 
 .imageScaleIn.animate {
   animation: scaleInFadeOnce 3s ease-in-out 0.5s forwards;
@@ -239,6 +239,7 @@ footer {
     }
   }
 }
+
 .imageFadeIn {
   overflow: visible;
   z-index: 3;

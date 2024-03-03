@@ -1,23 +1,20 @@
-// Set main domain
+
+// Define your target URL
 var targetURL = "https://realjoelchavez.com";
 
+// Check if the current location's host matches the target host
+var isTargetHost = window.location.host === targetHost;
 
-// Parse the target URL
-var parser = document.createElement('a');
-parser.href = targetURL;
+// Check if the current location is localhost or 127.0.0.1 (typical live server addresses)
+var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-// Get hostname and pathname from target URL
-var targetHostname = parser.hostname.replace('www.', '');
-var targetPathname = parser.pathname.replace(/\/$/, '');
-
-// Get current page's hostname and pathname, normalized
-var currentHostname = window.location.hostname.replace('www.', '');
-var currentPathname = window.location.pathname.replace(/\/$/, '');
-
-// Redirect only if both hostname and pathname do not match
-if (currentHostname !== targetHostname || currentPathname !== targetPathname) {
-    window.location.href = targetURL;
+// If not on localhost, not already at the target host, redirect while preserving the pathname and search
+if (!isLocalhost && !isTargetHost) {
+    // Construct the full URL to redirect to while preserving the pathname and search
+    var newPath = window.location.pathname + window.location.search;
+    window.location.href = "https://" + targetHost + newPath;
 }
+
 
 
 window.onbeforeunload = function () {

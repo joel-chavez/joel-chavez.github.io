@@ -1,6 +1,6 @@
 window.onload = function() {
 // Check if the current domain is not the target domain
-  if (window.location.hostname == "https://www.chavezjoel.com" ) {
+  if (window.location.hostname !== "https://realjoelchavez.com") {
     // Redirect to the target URL
    window.location.href = "https://realjoelchavez.com";
   }

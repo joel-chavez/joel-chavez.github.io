@@ -11,7 +11,7 @@ var isLocalhost = window.location.hostname === 'localhost' || window.location.ho
 if (!isLocalhost && !isTargetHost) {
     // Construct the full URL to redirect to while preserving the pathname and search
     var newPath = window.location.pathname + window.location.search;
-    window.location.href = "https://" + targetHost + newPath;
+    window.location.href = targetHost + newPath;
 }
 
 

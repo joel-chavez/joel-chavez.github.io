@@ -1,6 +1,5 @@
-
-// Define your target URL
-var targetURL = "https://realjoelchavez.com";
+// Define target URL
+var targetHost = "https://realjoelchavez.com";
 
 // Check if the current location's host matches the target host
 var isTargetHost = window.location.host === targetHost;
@@ -16,11 +15,13 @@ if (!isLocalhost && !isTargetHost) {
 }
 
 
+  // Initialize animations here
 
 window.onbeforeunload = function () {
   window.scrollTo(-10, -10);
 }
 
+window.onload = function() {
 
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach((entry)=>{
@@ -77,3 +78,4 @@ function adjustTextPortait() {
 // Call the function on page load and on window resize
 window.addEventListener('load', adjustTextPortait);
 window.addEventListener('resize', adjustTextPortait);
+};

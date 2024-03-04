@@ -37,15 +37,11 @@ body {
 }
 
 @media (orientation: portrait) {
-  body{
-    font-size:xxx-large;
-  }
-  .headShot{
-    width: 50vw;
 
-  }
+  .headShot{width: 50vw;}
   footer{font-size:large;}
   .welcome-container{font-size:x-large;}
+  body{font-size:xxx-large;}
 }
 
 @media (orientation: landscape) {

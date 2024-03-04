@@ -1,5 +1,5 @@
 // Define target URL
-var targetHost = "https://realjoelchavez.com";
+var targetHost = "realjoelchavez.com";
 
 // Check if the current location's host matches the target host
 var isTargetHost = window.location.host === targetHost;
@@ -11,7 +11,7 @@ var isLocalhost = window.location.hostname === 'localhost' || window.location.ho
 if (!isLocalhost && !isTargetHost) {
     // Construct the full URL to redirect to while preserving the pathname and search
     var newPath = window.location.pathname + window.location.search;
-    window.location.href = targetHost + newPath;
+    window.location.href = "https://" + targetHost + newPath;
 }
 
 

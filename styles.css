@@ -208,7 +208,7 @@ footer {
 }
 
 @media (orientation: portrait) {
-  .imageScaleIn{transform:scale(2); left:0vw;top:25vh;  }
+  .imageScaleIn{transform:scale(2.1); left:-4vw;top:25vh;  }
   .imageScaleIn.animate {
     animation: scaleInGlowOncePort 2s 1 ease-in-out forwards;
   }
@@ -220,7 +220,7 @@ footer {
       position:fixed;
     }
     33% {
-      transform: scale(2);
+      transform: scale(2.1);
       opacity: 0.75;
     }
     67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
@@ -253,7 +253,7 @@ footer {
   animation: fadeInGlowOnce 6s ease-in-out 2s forwards;
 }
 @media (orientation: portrait) {
-  .imageFadeIn{transform:scale(2); left:0vw; top:25vh;  }
+  .imageFadeIn{transform:scale(2.1); left:-4vw; top:25vh;  }
   .imageFadeIn.animate {
     animation: fadeInGlowOnce 1.5s ease-in-out 2s forwards;
   }
@@ -290,7 +290,7 @@ footer {
     animation: linesAnim 1s ease-in-out 2s forwards;
   }
   @media (orientation: portrait) {
-    .lines{transform:scale(2); left:0vw; top:25vh;  }
+    .lines{transform:scale(2.1); left:-4vw; top:25vh;  }
     .lines.animate {
       animation: linesAnim 1s ease-in-out 2s forwards;
     }

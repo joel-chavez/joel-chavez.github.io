@@ -208,7 +208,7 @@ footer {
 }
 
 @media (orientation: portrait) {
-  .imageScaleIn{transform:scale(2); left:0vw;  }
+  .imageScaleIn{transform:scale(2); left:0vw;top:25vh;  }
   .imageScaleIn.animate {
     animation: scaleInGlowOncePort 2s 1 ease-in-out forwards;
   }

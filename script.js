@@ -37,13 +37,13 @@ const hiddenElements = document.querySelectorAll('.animate-on-scroll');
 
 hiddenElements.forEach((el)=> observer.observe(el));
 
-function adjustFadeInPortaitImg() {
+function adjustPortaitImg() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const scaleFactor = isPortrait ? 2.1 : 1; // Increase scale in portrait mod
+  const scaleFactor = isPortrait ? 2 : 1; // Increase scale in portrait mod
   const leftDistance = isPortrait ? '0vw' : '25vw'; // Adjust left distance based on orientation
   const topDistance = isPortrait ?'25vh' : '-5vh'; // Increase scale in portrait mod
 
-  const fadeImages = document.querySelectorAll('.imageFadeIn');
+  const fadeImages = document.querySelectorAll('.imageFadeIn','.imageScaleIn','lines');
   fadeImages.forEach(img => {
       img.style.transform = `scale(${scaleFactor})`;
       img.style.left = leftDistance;
@@ -51,31 +51,29 @@ function adjustFadeInPortaitImg() {
 
   });
 }
-
+window.addEventListener('load', adjustPortaitImg);
+window.addEventListener('resize', adjustPortaitImg);
 // Call the function on page load and on window resize
-window.addEventListener('load', adjustFadeInPortaitImg);
-window.addEventListener('resize', adjustFadeInPortaitImg);
+
 
 
 function adjustTextPortait() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const text = document.querySelectorAll('.textScaleIn');
+  const text = document.querySelectorAll('.textScaleIn', '.textScaleIn.animate');
   text.forEach(text => {
     if(isPortrait) {
       text.style.width='100vw';
       text.style.textAlign = 'justify';
-      text.style.left='0vw';
-      text.style.right='0vw';
-      text.style.margin='0vw'
-  } else {
+    }  
+    
+    else {
     text.style.width='25vw';
     text.style.textAlign = 'right';
-    text.style.left='0vw';
-    text.style.right='0vw';  }
+    }
   });
 }
 
 // Call the function on page load and on window resize
-window.addEventListener('load', adjustTextPortait);
-window.addEventListener('resize', adjustTextPortait);
+
 };
+

@@ -38,12 +38,16 @@ body {
   footer{font-size:large;}
   .welcome-container{font-size:x-large;}
   body{font-size:xxx-large;}
+  .textScaleIn{width:100vw;}
+
 }
 
 @media (orientation: landscape) {
   body{font-size:x-large;}
   .headShot{height: 50vh;}
   .topHeaderSpacer{height: 5vh;}
+  .textScaleIn{width:25vw;}
+
 }
 
 header {
@@ -147,10 +151,8 @@ footer {
   background-color: rgba(255,255,255,0.9); 
   color:#000;
   overflow: visible;
-  text-align: right;   
   z-index: 5;
   top:50vh;
-  width:25vw;
   left:0vw;
   display: flex; align-items:center; justify-content:center;
   transform:scale(0.25);
@@ -168,9 +170,9 @@ footer {
   background-color: transparent;
   align-items: center; 
   justify-content: center; text-align: center;
-  transform:scale(1);
+  transform:scale(0.75);
   overflow: visible;
-  opacity: 0;
+  opacity: 0.5;
   position: relative;
   will-change: position,transform,opacity;
   transition: 
@@ -182,47 +184,47 @@ footer {
 .imageScaleIn img{width: 100vw;height:auto;}
 
 .imageScaleIn.animate {
-  animation: scaleInFadeOnce 3s ease-in-out 0.5s forwards;
+  animation: scaleInFadeOnce 1.5s 1 ease-in-out forwards;
 }
 
 @keyframes scaleInFadeOnce {
   0% {
-    transform: scale(0.25);
-    opacity: 0;
+    transform: scale(0.75);
+    opacity: 0.5;
     position:fixed;
   }
   33% {
-    transform: scale(1);
+    transform:scale(1);
     opacity: 1;
   }
   67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
-    opacity: 0.75;
+    opacity: 0.9;transform: scale(1);
   }
   100% {
-    opacity: 1;
+    opacity: 1;transform: scale(1);
     position:fixed;
 
   }
 }
 
 @media (orientation: portrait) {
-  .imageScaleIn{transform:scale(2.1); left:0vw; top:25vh;  }
+  .imageScaleIn{transform:scale(2); left:0vw;  }
   .imageScaleIn.animate {
-    animation: scaleInFadeOncePort 3s ease-in-out 0.5s forwards;
+    animation: scaleInGlowOncePort 2s 1 ease-in-out forwards;
   }
   
-  @keyframes scaleInFadeOncePort {
+  @keyframes scaleInGlowOncePort {
     0% {
-      transform: scale(0.25);
-      opacity: 0;
+      transform: scale(1);
+      opacity: 0.5;
       position:fixed;
     }
     33% {
-      transform: scale(2.1);
-      opacity: 1;
+      transform: scale(2);
+      opacity: 0.75;
     }
     67% { /* Adjust these percentages based on how long you want each phase of the fade effect to last */
-      opacity: 0.75;
+      opacity: 0.95;
     }
     100% {
       opacity: 1;
@@ -246,13 +248,12 @@ footer {
   transition: 
     position 1s ease-in-out 0.5s, 
     opacity 1s ease-in-out 0.5s;
-
 }
 .imageFadeIn.animate {
-  animation: fadeInGlowOnce 3s ease-in-out 2s forwards;
+  animation: fadeInGlowOnce 6s ease-in-out 2s forwards;
 }
 @media (orientation: portrait) {
-  .imageFadeIn{transform:scale(2.1); left:0vw; top:25vh;  }
+  .imageFadeIn{transform:scale(2); left:0vw; top:25vh;  }
   .imageFadeIn.animate {
     animation: fadeInGlowOnce 1.5s ease-in-out 2s forwards;
   }
@@ -263,10 +264,47 @@ footer {
       position:fixed;
     }
     50% {
-      opacity: 0.9;
+      opacity: 0.95;
     }
     25%,100% {
       opacity: 1;
       position:fixed;
     }
   }
+
+.lines{
+    z-index: 3;
+    width:75vw;left:25vw;  top: -5vh;
+    display: flex;
+    position: relative;  
+    opacity: 0;
+    background-color: transparent;
+    align-items: center; 
+    justify-content: center; text-align: center;
+    will-change: position, opacity;
+    transition: 
+      position 1s ease-in-out 0.5s, 
+      opacity 1s ease-in-out 0.5s;
+  }
+  .lines.animate {
+    animation: linesAnim 1s ease-in-out 2s forwards;
+  }
+  @media (orientation: portrait) {
+    .lines{transform:scale(2); left:0vw; top:25vh;  }
+    .lines.animate {
+      animation: linesAnim 1s ease-in-out 2s forwards;
+    }
+  }
+    @keyframes linesAnim {
+      0% {
+        opacity: 0.25;
+        position:fixed;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      25%,100% {
+        opacity: 0.9;
+        position:fixed;
+      }
+    }

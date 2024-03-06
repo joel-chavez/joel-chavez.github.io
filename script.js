@@ -7,9 +7,10 @@ var isTargetHost = window.location.host === targetHost;
 // Check if the current location is localhost or 127.0.0.1 (typical live server addresses)
 var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
+var isFileProtocol = window.location.protocol === 'file:';
 // If not on localhost, not already at the target host, redirect while preserving the pathname and search
-if (!isLocalhost && !isTargetHost) {
-    // Construct the full URL to redirect to while preserving the pathname and search
+if (!isLocalhost && !isFileProtocol && !isTargetHost) {
+  // Construct the full URL to redirect to while preserving the pathname and search
     var newPath = window.location.pathname + window.location.search;
     window.location.href = "https://" + targetHost + newPath;
 }

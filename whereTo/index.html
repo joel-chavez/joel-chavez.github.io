@@ -6,53 +6,268 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>whereTo?</title>  
+    <script>
+      const timeZone = 'America/New_York';
 
+// Create a new Date object for the current time
+const now = new Date();
+
+// Format the date and time in the specified time zone
+const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+  timeZone: timeZone,
+  timeStyle: 'long',
+  dateStyle: 'medium'
+}).format(now);
+
+console.log(formattedDateTime);
+    </script>
 </head>
+<style>
+  .body{z-index:1;}
+  .bgGradient{background:linear-gradient(90deg,rgba(0,0,0,0.25),rgba(0,0,0,0.4),rgba(0,0,0,0.5),rgba(0,0,0,0.4),rgba(0,0,0,0.25));}
+  .siteIcon{z-index:5;}
+  .centerAlignRow{display:flex; flex-direction: row;align-items: center;text-align: center;justify-content:center;}
+  .centerAlignColumn{display:flex; flex-direction: column;align-items: center;text-align: center;justify-content:center;}
+  .shadowImage{filter: drop-shadow(0vh 0.1vh 1vh rgba(255, 255, 255,  0.75));}
 
-<body style="background-color: #F5F5F5;">
-  <header>
+  @media (orientation: landscape) {
+      .siteIcon{width:4vw;z-index:5;}
+      .betweenIconSpacer{height:12.5vh;}
+      header{height:10vh;}
+      .searchEngine{height:3vh;max-height:3vh;margin-top:1vh;margin-left:1.5vw; margin-right:1.5vw}
+      .weatherwidget-io{width:40vw;margin-right:5vw;margin-left:5vw;}
+    } 
+    @media (orientation: portrait) {
+      .siteIcon{width:5vw;z-index:5;}
+      .betweenIconSpacer{height:10vh;}
+      header{height:7.5vh;}
+      .searchEngine{width:10vw;max-width:10vw; margin-top:1vh;margin-left:1.5vw; margin-right:1.5vw}
+      body{background-size:210vh;}
+      .weatherwidget-io{width:25vw;margin-right:12.5vw;margin-left:12.5vw;}
+    } 
+  </style>
+<body style="padding:0;margin:0;background-color:rgba(0,0,0,0.75); background-position: center; background-image: url('bgNeonHallTexasTRSPT.png') ;">
+
+  <header class="centerAlignColumn bgGradient" style="top:0vh;left:0vw;width:100vw;position:fixed;">
+      <div><input type="text" 
+          id="searchQuery" 
+          placeholder="Type search ..... then click search engine below" 
+          style="width:50vw;">
+    <div class="centerAlignRow" style="position:relative;bottom:0vh;margin-top:0;margin-bottom:0;">
+      <img  class="shadowImage searchEngine" onclick="redirectToGoogleSearch()" src="searchGoogle.png" >
+      <img  class="shadowImage searchEngine" onclick="redirectToDuckDuckGoSearch()" src="searchDuckDuckGo.png" >
+      <img class="shadowImage searchEngine" onclick="redirectToStartPageSearch()" src="searchStartpage.png" >
+    </div>
+  </div>
+    
+
+    <script>
+      function redirectToGoogleSearch() {
+          var searchQuery = document.getElementById('searchQuery').value;
+          var googleSearchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+          window.location.href = googleSearchURL;}
+      function redirectToDuckDuckGoSearch() {
+        var searchQuery = document.getElementById('searchQuery').value;
+        var duckDuckGoSearchURL = 'https://duckduckgo.com/?q=' + encodeURIComponent(searchQuery);
+        window.location.href = duckDuckGoSearchURL;}
+      function redirectToStartPageSearch() {   
+        var searchQuery = document.getElementById('searchQuery').value;
+        var startPageSearchURL = 'https://www.startpage.com/sp/search?query=' + encodeURIComponent(searchQuery);
+        window.location.href = startPageSearchURL;}
+    </script>
   </header>
 
 
-  <section>
+  <section style="padding:0;margin:0;z-index:1;">
+    <style>.timeText{color:white;font-family: 'Verdana';width:100vw;}</style>
     
-    <div style="display: flex;flex-direction: row;height:25vh"></div>
+    <div style="height:10vh;padding:0;margin:0;"></div>
+    
+    <div class= "centerAlignRow" style="width:100vw;">
+      <p id="currentTimeDC" class="timeText"></p>
+      <p id="currentTimePecos" class="timeText"></p>
+    </div>
 
-    <div style="display: flex;flex-direction: row;top:50vh">
-      
-      <p style="width:10vw;"></p>
-
-      <a href="https://www.amazon.com"><img style="width:3vw;" src="whereTo/logoAmazon.png"></a> 
-      <p style="width:7vw;"></p>
-
-      <a  href="https://search.google.com"><img style="width:3vw;"src="whereTo/logoGoogle.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://realjoelchavez.com"><img style="width:3vw;"src="whereTo/logoPersonal.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://chat.openai.com"><img style="width:3vw;"src="whereTo/logoOpenAI.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://mail.google.com"><img style="width:3vw;"src="whereTo/logoGmail.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://georgetown.instructure.com/courses/183969"><img style="width:3vw;"src="whereTo/logoCanvas.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://www.tinkercad.com"><img style="width:3vw;"src="whereTo/logoTinkercad.png"></a>  
-      <p style="width:7vw;"></p>
-
-      <a  href="https://www.grammarly.com"><img style="width:3vw;"src="whereTo/logoGrammarly.png"></a>  
-      <p style="width:7vw;"></p>
-      
-      <p style="width:10vw;"></p>
-
-
+    <div class="centerAlignRow" style="width:100vw;z-index:1;">
+      <div style="z-index:1;">
+        <a class="weatherwidget-io bgGradient" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" 
+        data-label_1="D.C. (Zip: 20007)"
+        data-label_2="Weather Forecast" 
+        data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)" 
+        data-highcolor="#ccd3d7" data-lowcolor="#edebeb" 
+        data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
+        data-theme="original" data-icons="Climacons Animated"
+        data-shadow="rgba(255, 255, 255, 0.15)" 
+        data-font="Verdana" ></a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+      </div>    
+      <div style="width:100vw;z-index:1;">
+        <a class="weatherwidget-io bgGradient" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+        data-label_1="Pecos (Zip: 79772)" 
+        data-label_2="Weather Forecast" 
+        data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)" 
+        data-highcolor="#ccd3d7" data-lowcolor="#edebeb" 
+        data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
+        data-theme="original" data-icons="Climacons Animated"
+        data-shadow="rgba(255, 255, 255, 0.15)" 
+        data-font="Verdana" ></a>
+        <script>
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+      </div>
     </div>
   </section>
-  <footer>
-  </footer>
+<section class="sitez">
+  <style>
+
+.shadowUpDown{filter: 
+  drop-shadow(0vh -5vh 1vh rgba(0, 0, 0,  0.65)) 
+  drop-shadow(0vh 5vh 1vh rgba(0, 0, 0,  0.65));}
+.shadowUpRight{filter: 
+  drop-shadow(0vh -5vh 1vh rgba(0, 0, 0,  0.65)) 
+  drop-shadow(8vh 0vh 1vh rgba(0, 0, 0,  0.65));}
+.shadowUpLeft{filter: 
+  drop-shadow(0vh -5vh 1vh rgba(0, 0, 0,  0.65)) 
+  drop-shadow(5vh 0vh 1vh rgba(0, 0, 0,  0.65));}
+
+.shadowDownRight{filter: 
+  drop-shadow(0vh 5vh 1vh rgba(0, 0, 0,  0.65))
+  drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
+.shadowDownLeftRight{filter: 
+  drop-shadow(0vw 5vw 1.1vh rgba(0, 0, 0,  0.65)) /*bottom*/
+  drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65))  /*right*/
+  drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}  /*left*/
+.glowLight{filter:
+  drop-shadow(0vw -0.25vw 0.25vw rgba(255, 242, 204,  0.33)) /*top*/
+  drop-shadow(0vw 0.25vw 0.25vw rgba(255, 242, 204,  0.33)) /*bottom*/
+  drop-shadow(0.25vw 0vw 0.25vw rgba(255, 242, 204,  0.33))  /*right*/
+  drop-shadow(-0.25vw 0vw 0.25vw rgba(255, 242, 204,  0.33));}  /*left*/
+.shadowLeftRightSide{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
+.shadowLeft{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
+.shadowRight{filter: drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
+.allSitez{width:100vw;}
+    @media (orientation: landscape) {
+      .leftSitez{left:0vw;width:40vw;margin:5vw;}
+      .rightSitez{left:50vw;width:40vw;margin:5vw;}
+
+      .topRowLeft{left:0vw;}
+      .middleRowLeft{left:0vw;}
+      .bottomRowLeft{left:0vw; }
+
+
+
+      .topLeftSitez,.middleLeftSitez,.bottomLeftSitez {margin:2.5vw; }
+
+
+      .topRightSitez, .middleRightSitez, .bottomRightSitez{margin:2.5vw;}
+    } 
+    @media (orientation: portrait) {
+      .leftSitez{left:0vw;width:40vw;margin:5vw;}
+    .rightSitez{left:50vw;width:40vw;margin:5vw;}
+
+      .topRowLeft{left:0vw;}
+      .middleRowLeft{left:0vw;}
+      .bottomRowLeft{left:0vw; }
+
+      .topRowRight{left:0vw; justify-content: left}
+      .middleRowRight{left:0vw;  justify-content: left}
+      .bottomRowRight{left:0vw;justify-content: left}
+
+
+      .topLeftSitez,.middleLeftSitez,.bottomLeftSitez {margin:2.5vw; }
+
+      .topRightSitez, .middleRightSitez, .bottomRightSitez{margin:2.5vw; }
+    } 
+  </style>
+  <!-- test-->
+
+<div class="allSitez centerAlignRow">
+  <div class= "leftSitez">  
+    <!-- six total icons to make a "J" -->
+    
+    <div class="topRowLeft centerAlignRow">
+      <a href="https://www.amazon.com" class="topLeftSitez"><img class="siteIcon glowLight"   src="logoAmazon.png"></a> 
+      <a href="https://www.thingiverse.com" class="topLeftSitez" style="z-index: 2;"><img class="siteIcon glowLight"  src="logoThingiverse.png"></a>  
+      <a href="https://chat.openai.com" class="topLeftSitez"><img class="siteIcon glowLight"  src="logoOpenAI.png"></a>  
+    </div>
+    
+    <div class="middleRowLeft centerAlignRow">
+      <a   class="bottomLeftSitez "> <img class="siteIcon glowLight" src="logoPlaceHolder.png"> </a>
+      <a href="https://www.grammarly.com" class="middleLeftSitez  "><img class="siteIcon glowLight "  src="logoGrammarly.png"></a>  
+      <a   class="bottomLeftSitez "> <img class="siteIcon glowLight" src="logoPlaceHolder.png"> </a>
+    </div>
+
+    <div class="bottomRowLeft centerAlignRow">
+      <a  href="https://realjoelchavez.com" class="bottomLeftSitez "><img class="siteIcon glowLight "  src="logoPersonal.png"></a>  
+      <a  href="https://github.com" class="bottomLeftSitez "><img class="siteIcon glowLight "  src="logoGitHub.png"></a>        
+      <a   class="bottomLeftSitez "> <img class="siteIcon glowLight" src="logoPlaceHolder.png"> </a>
+    </div>
+  </div>
+
+
+  <div class= "rightSitez">
+
+    <div class="topRowRight centerAlignRow">
+      <a href="https://mail.google.com" class="topRightSitez" style=""><img class="siteIcon glowLight shadowDownRight"  src="logoGmail.png"></a>  
+      <a   class="topRightSitez" href="https://scholar.google.com"> <img class="siteIcon glowLight" src="logoGoogleScholar.png"> </a>
+      <a href="https://www.tinkercad.com" class="topRightSitez "><img class="siteIcon glowLight "  src="logoTinkercad.png"></a>
+    </div>
+
+    <div class="middleRowRight centerAlignRow">
+      <a class="middleRightSitez" href="https://www.youtube.com"><img class="siteIcon glowLight"  src="logoYoutube.png"></a>
+      <a   class="bottomLeftSitez "> <img class="siteIcon glowLight" src="logoPlaceHolder.png"> </a>
+      <a   class="bottomLeftSitez "> <img class="siteIcon glowLight" src="logoPlaceHolder.png"> </a>
+
+    </div>
+
+    <div class="bottomRowRight centerAlignRow">
+      <a  class="bottomRightSitez" href="https://georgetown.instructure.com/courses/183969"><img class="siteIcon glowLight shadowUpRight"  src="logoCanvas.png"></a>  
+      <a   class="bottomLeftSitez" href="https://myaccess.georgetown.edu"> <img class="siteIcon glowLight" src="logoGeorgetown.png"> </a>
+      <a  href="edge://settings/profiles" class="bottomRightSitez " style="justify-content: left;"><img class="siteIcon glowLight "  src="logoSettings.png"></a>  
+    </div>
+  </div>
+
+</div>
+</section>
+  
+
+<footer >
+
+</footer>
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const updateTime = () => {
+        const timeZone = 'America/New_York'; // Set your desired timezone
+        const now = new Date();
+        const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: timeZone,
+            timeStyle: 'medium'}).format(now);
+
+        document.getElementById('currentTimeDC').textContent = formattedDateTime;
+    };
+
+    updateTime(); // Update time immediately
+    setInterval(updateTime, 1000); // Update time every 1000 milliseconds (1 second)
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const updateTime = () => {
+        const timeZone = 'America/Chicago'; // Set your desired timezone
+        const now = new Date();
+        const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: timeZone,
+            timeStyle: 'medium'}).format(now);
+        const pecosForm = ('Current Time is:',formattedDateTime)
+
+        document.getElementById('currentTimePecos').textContent = formattedDateTime;
+    };
+
+    updateTime(); // Update time immediately
+    setInterval(updateTime, 1000); // Update time every 1000 milliseconds (1 second)
+  });
+</script>
 </body>
 
 </html>

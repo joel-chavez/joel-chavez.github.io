@@ -37,7 +37,7 @@ body {
   .headShot{width: 50vw;}
   footer{font-size:large;}
   .welcome-container{font-size:x-large;}
-  body{font-size:xxx-large;}
+  body{font-size:xx-large;}
   .textScaleIn{width:100vw;}
 
 }
@@ -150,7 +150,7 @@ footer {
   position: relative;  
   background-color: rgba(255,255,255,0.9); 
   color:#000;
-  overflow: visible;
+  overflow: hidden;
   z-index: 5;
   top:50vh;
   left:0vw;
@@ -162,7 +162,9 @@ footer {
 .textScaleIn.animate {
   transform:scale(1); opacity:1;
 }
-
+@media (orientation: portrait) {
+  .textScaleIn{padding-left: 7.5vw;padding-right: 7.5vw;}
+}
 .imageScaleIn {
   z-index: 3;
   width:75vw;left:25vw;top:-5vh;

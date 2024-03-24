@@ -40,8 +40,8 @@ hiddenElements.forEach((el)=> observer.observe(el));
 
 function adjustPortaitImg() {
   const isPortrait = window.innerHeight > window.innerWidth;
-  const scaleFactor = isPortrait ? 2 : 1; // Increase scale in portrait mod
-  const leftDistance = isPortrait ? '0vw' : '25vw'; // Adjust left distance based on orientation
+  const scaleFactor = isPortrait ? 2.1 : 1; // Increase scale in portrait mod
+  const leftDistance = isPortrait ? '-4vw' : '25vw'; // Adjust left distance based on orientation
   const topDistance = isPortrait ?'25vh' : '-5vh'; // Increase scale in portrait mod
 
   const fadeImages = document.querySelectorAll('.imageFadeIn','.imageScaleIn','lines');

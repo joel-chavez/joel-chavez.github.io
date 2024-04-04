@@ -94,12 +94,14 @@ background-repeat: no-repeat;">
 
   <section style="padding:0;margin:0;z-index:1;"referrerpolicy="no-referrer" rel="noreferrer">
     <style>.timeText{color:black;font-family: 'Verdana';}</style>
-    <div style="overflow:hidden; right:0vw;width:100vw;display:flex;flex-direction: column; justify-content: right; align-items: right;align-content: right;text-align:right;pointer-events: none;">
-    
-        <div id="currentTimeDC" style="margin:1vh;justify-content:right;text-align: right; align-content: right;" class="timeText">
-        </div>
+    <div style="overflow:visible; right:0vw;width:100vw;display:flex;flex-direction: column; justify-content: right; align-items: right;align-content: right;text-align:right;">
+      <div style="display:flex;align-items: right;justify-content: right;text-align: right;margin:1vh;"><p class="timeText">Washington, D.C. </p> <p style="width:0.5vw;"></p>
+        <p id="currentTimeDC" class="timeText"> </p></div>
 
-        <div style="height:5vh; margin:1vh;right:0vw; left:75vw; justify-content:right; text-align: right; align-content: right;" class= "bgGradient" id="ww_ebbe656e9dc3a" 
+
+        <div style="height:5vh; margin:1vh;right:0vw; left:75vw; 
+        justify-content:right; text-align: right; align-content: right;" 
+        id="ww_ebbe656e9dc3a" 
         v='1.3' loc='id' 
         a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3907"],"font":"Verdana",
         "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#000000",
@@ -111,10 +113,11 @@ background-repeat: no-repeat;">
     
         <a class="weatherwidget-io" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
           data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)"
-          style="left:75vw;width:25vw; height:5vh; justify-content: right; align-content: right;text-align: right;" 
+          style="top:15vh;left:77vw;margin:1vh; width:21vw; 
+          justify-content: right; align-content: right;text-align: right;overflow: visible;" 
           data-highcolor="#000000" data-lowcolor="#020202" 
           data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
-          data-mode="Forecast" data-label_1="D.C."
+          data-mode="Forecast" data-label_1=""
           data-theme="original" data-icons="Climacons Animated"
           data-shadow="rgba(0, 0, 0, 0.5)" 
           data-font="Verdana" referrerpolicy="no-referrer" rel="noreferrer"></a>
@@ -161,10 +164,10 @@ background-repeat: no-repeat;">
 .shadowLeftRightSide{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
 .shadowLeft{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
 .shadowRight{filter: drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
-.allSitez{width:50vw;position: fixed;left:25vw;}
+.allSitez{width:40vw;position: fixed;left:30vw;top:0vh;margin-top: 25vh;}
     @media (orientation: landscape) {
-      .leftSitez{left:0vw;width:40vw;margin:5vw;}
-      .rightSitez{left:50vw;width:40vw;margin:5vw;}
+      .leftSitez{left:0vw;width:40vw;margin:1vw;}
+      .rightSitez{left:50vw;width:40vw;margin:1vw;}
 
       .topRowLeft{left:0vw;}
       .middleRowLeft{left:0vw;}
@@ -172,10 +175,10 @@ background-repeat: no-repeat;">
 
 
 
-      .topLeftSitez,.middleLeftSitez,.bottomLeftSitez {margin:2.5vw;}
+      .topLeftSitez,.middleLeftSitez,.bottomLeftSitez {margin:1vw;}
 
 
-      .topRightSitez, .middleRightSitez, .bottomRightSitez{margin:2.5vw;}
+      .topRightSitez, .middleRightSitez, .bottomRightSitez{margin:1vw;}
     } 
     @media (orientation: portrait) {
       .leftSitez{left:0vw;width:40vw;margin:5vw;}
@@ -228,7 +231,7 @@ background-repeat: no-repeat;">
       <a  referrerpolicy="no-referrer" rel="noreferrer" href="https://realjoelchavez.com" class="bottomLeftSitez "target="_blank">
         <img class="siteIcon glowBlack "  src="logoPersonal.png"></a>  
 
-        <a  referrerpolicy="no-referrer" rel="noreferrer" href="https://github.com" class="bottomLeftSitez "target="_blank">
+        <a  referrerpolicy="no-referrer" rel="noreferrer" class="bottomLeftSitez" href="https://github.com"  target="_blank">
         <img class="siteIcon glowBlack "  src="logoGitHub.png"></a>        
     
         <a  referrerpolicy="no-referrer" rel="noreferrer" class="bottomLeftSitez" target="_blank"> 
@@ -256,9 +259,10 @@ background-repeat: no-repeat;">
     </div>
 
     <div class="bottomRowRight centerAlignRow"referrerpolicy="no-referrer" rel="noreferrer">
-      <a referrerpolicy="no-referrer" rel="noreferrer"href="https://www.tinkercad.com" class="topRightSitez "target="_blank">
+      <a referrerpolicy="no-referrer" rel="noreferrer" class="bottomRightSitez" href="https://www.tinkercad.com" target="_blank">
         <img class="siteIcon glowBlack "  src="logoTinkercad.png"></a>
-      <a referrerpolicy="no-referrer" rel="noreferrer"class="middleRightSitez" href="https://www.youtube.com" target="_blank"><img class="siteIcon glowBlack"  src="logoYoutube.png"></a>
+      <a referrerpolicy="no-referrer" rel="noreferrer"class="bottomRightSitez" href="https://www.youtube.com" target="_blank">
+        <img class="siteIcon glowBlack"  src="logoYoutube.png"></a>
       <a referrerpolicy="no-referrer" rel="noreferrer"  href="edge://settings/profiles" class="bottomRightSitez " style="justify-content: left;"target="_blank"><img class="siteIcon glowBlack "  src="logoSettings.png"></a>  
     </div>
 
@@ -266,14 +270,17 @@ background-repeat: no-repeat;">
 
 </div>
 </section>
-<section style="position:fixed;bottom:0vh;">
-  <div class="yHfkX7 iYv9Ms" style="min-height: 310px;"><div dir="ltr" role="presentation" class="ub6z34" data-scroll-sync="true"><div class="rugZcM" style="min-width: 1120px; min-height: 310px; width: 1148px; height: 310px;"></div><canvas width="885" height="278" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas><canvas width="984" height="310" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas><canvas width="885" height="278" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas><canvas width="885" height="278" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas><canvas width="885" height="278" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas><canvas width="885" height="278" style="position: absolute; left: 0px; top: 0px; width: 984px; height: 310px; z-index: -1;"></canvas></div></div>
-  <p id="currentTimePecos" style="width:40vw;text-align: center;" class="timeText"></p>
+<section style="display:flex; flex-direction: column; position:fixed; text-align: right; justify-content: right; align-items: right;
+bottom:10vh;top:50vh;width:35vw;pointer-events: none;overflow: visible;margin:1vh;">
+
+  <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;"><p class="timeText">Pecos, Texas: </p> <p style="width:0.5vw;"></p>
+  <p id="currentTimePecos" class="timeText"> </p></div>
   <div id="ww_42cb9d55e9128" v='1.3' loc='id' 
-  a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl479"],"font":"Arial",
-  "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"image","cl_font":"#FFFFFF",
-  "cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107",
-  "cl_thund":"#FF5722","el_nme":3}'>More forecasts: 
+  a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl479"],"font":"Verdana",
+  "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#000000",
+  "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107",
+  "cl_thund":"#FF5722","el_nme":3}'
+  style="text-align: right; justify-content: right;left:1vh; align-items: right;width:30vw;margin-bottom:1vh;margin-left: -1vh;overflow: hidden;">More forecasts: 
     <a href="https://oneweather.org/atlanta/30_days/" 
   id="ww_42cb9d55e9128_u" target="_blank">
   Weather forecast Atlanta 30 days
@@ -281,16 +288,18 @@ background-repeat: no-repeat;">
   </div>
   <script async src="https://app2.weatherwidget.org/js/?id=ww_42cb9d55e9128">
   </script>
-  <a class="weatherwidget-io bgGradient" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+<div style="overflow: visible;">  <a class="weatherwidget-io" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
     data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
-    style="position:fixed; overflow:hidden;" 
+    style="margin:1vh; width:30vw;position: fixed;overflow:visible;
+    text-align: right; justify-content: right; align-items: right;margin:1vh;"
+    data-label_1=""
     data-highcolor="#000000" data-lowcolor="#020202" 
-    data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.75)"
+    data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
     data-mode="Forecast"
     data-theme="original" data-icons="Climacons Animated"
     data-shadow="rgba(0, 0, 0, 0.5)" 
     data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" ></a>
-
+  </div>
 <script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>

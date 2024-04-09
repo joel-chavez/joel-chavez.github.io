@@ -24,45 +24,18 @@ console.log(formattedDateTime);
 </head>
 
 <body style="padding:0;margin:0;background-color:rgba(255,255,255,0.0); 
-background-image: url('west-tx-usa-sat.png');
-background-position:top;background-attachment: fixed;
+background-image: url('west-tx-usa-sat.png'); text-decoration: bold;
+background-attachment: fixed;
 background-repeat: no-repeat;">
-<style>
-  .body{z-index:1;}
-  .bgGradient{background:linear-gradient(90deg,rgba(255,255,255,0.25),rgba(255,255,255,0.4),rgba(255,255,255,0.5),rgba(255,255,255,0.4),rgba(255,255,255,0.25));}
-  .siteIcon{z-index:5;max-width:75vw;}
-  .centerAlignRow{display:flex; flex-direction: row; align-items: center; text-align: center; justify-content:center}
-  .centerAlignColumn{display:flex; flex-direction: column; align-items: center; text-align: center; justify-content:center;}
-  .rightAlignColumn{left:50vw;width:50vw;display:flex; flex-direction: column; align-items: right; text-align:right; justify-content:right;}
 
-  .shadowImage{filter: drop-shadow(0vh 0.1vh 1vh rgba(255, 255, 255,  0.75));}
-
-  @media (orientation: landscape) {
-      .siteIcon{height:5vh;max-height:5vh}
-      .betweenIconSpacer{height:12.5vh;}
-      header{height:10vh;}
-      .searchEngine{height:5vh;max-height:5vh;margin-top:1vh;margin-left:1.5vw; margin-right:1.5vw}
-      .weatherwidget-io{height:10vh;overflow:hidden;}
-    } 
-    @media (orientation: portrait) {
-      .siteIcon{width:5vw;z-index:5;}
-      .betweenIconSpacer{height:10vh;}
-      header{top:0vh;height:7.5vh;}
-      .searchEngine{height:3vh;max-width:3vh; margin-top:1vh;margin-left:1.5vw; margin-right:1.5vw}
-      body{background-size:210vh;}
-      .weatherwidget-io{width:25vw;margin-right:12.5vw;margin-left:12.5vw;}
-    } 
-  </style>
-  <header class="centerAlignColumn" style="top:0vh;left:20vw;width:60vw;position:relative;">
-      <div><input type="text" 
+  <header class="header centerAlignRow" style="top:0vh;position:relative;display:flex;justify-content: center;">
+      <div class="searchEngineBar"><input type="text" 
           id="searchQuery" 
           placeholder="  Type search, then click engine below.... 'Enter' = = Startpage search" 
-          style="text-decoration: white; background-color: #222222;color:white; width:50vw;height:2vh;text-align: center;justify-content: center;align-items: center;">
-    <div class="centerAlignRow" style="position:relative;bottom:0.5vh;margin-top:0;margin-bottom:0;">
+          style="text-decoration: white; background-color: rgba(122,122,122,0.5);color:red; width:50vw;height:1.5vh;text-align: center;justify-content: center;align-items: center;">
       <img class="shadowImage searchEngine" onclick="redirectToGoogleSearch()" src="logoSearchGoogle.png" referrerpolicy="no-referrer" rel="noreferrer" >
       <img class="shadowImage searchEngine" onclick="redirectToDuckDuckGoSearch()" src="logoSearchDuckDuckGo.png" referrerpolicy="no-referrer" rel="noreferrer">
       <img class="shadowImage searchEngine" onclick="redirectToStartPageSearch()" src="logoSearchStartpage.png"referrerpolicy="no-referrer" rel="noreferrer">
-    </div>
   </div>
     
 
@@ -89,49 +62,106 @@ background-repeat: no-repeat;">
         }
       });
     </script>
+    <style>
+      .body{z-index:1;}
+      .bgGradient{background:linear-gradient(90deg,rgba(255,255,255,0.25),rgba(255,255,255,0.4),rgba(255,255,255,0.5),rgba(255,255,255,0.4),rgba(255,255,255,0.25));}
+      .siteIcon{z-index:5;max-width:75vw;}
+      .centerAlignRow{display:flex; flex-direction: row; align-items: center; text-align: center; justify-content:center}
+      .centerAlignColumn{display:flex; flex-direction: column; align-items: center; text-align: center; justify-content:center;}
+      .rightAlignColumn{left:50vw;width:50vw;display:flex; flex-direction: column; align-items: right; text-align:right; justify-content:right;}
+      body{background-position:center;background-position-y:center;}    
+      .shadowImage{filter: drop-shadow(0vh 0.1vh 1vh rgba(255, 255, 255,  0.75));}
+    
+      @media (orientation: landscape) {
+          .siteIcon{height:6vh;max-height:6vh}
+          .betweenIconSpacer{height:12.5vh;}
+          header{width:30vw;align-items: center;justify-content: center;text-align: center;margin-left:35vw;}
+          .searchEngineBar{width:40vw;display:flex;align-items: center;}
+          .searchEngine{display:flex;align-items: center;width:5vw;margin-top:0.1vh;margin-bottom:0vh;}
+          .weatherwidget-io{height:5vh;overflow:visible;}
+          .dcWeather{margin-right:1vh;margin-top:30vh;}
+        } 
+        @media (orientation: portrait) {
+          .siteIcon{width:5vw;z-index:5;}
+          .betweenIconSpacer{height:10vh;}
+          header{top:0vh;width:100vw;display:flex;align-items: center;justify-content: center;}
+          .searchEngineBar{margin-left:10vw;width:100vw;display:flex;align-items: center;}
+          .searchEngine{width:7.5vw;display:flex;align-items: center;margin-top:0.5vw;margin-left:0.5vw; margin-right:0.5vw}
+          body{background-position-x:-40vw;background-position-y:center;background-size: 90vh;}
+          .weatherwidget-io{width:25vw;margin-right:12.5vw;margin-left:12.5vw;}
+          .dcWeather{margin-right:1vh;margin-top:40vh;}
+        } 
+      </style>
   </header>
 
 
-  <section style="padding:0;margin:0;z-index:1;"referrerpolicy="no-referrer" rel="noreferrer">
-    <style>.timeText{color:black;font-family: 'Verdana';}</style>
-    <div style="overflow:visible; right:0vw;width:100vw;display:flex;flex-direction: column; justify-content: right; align-items: right;align-content: right;text-align:right;">
-      <div style="display:flex;align-items: right;justify-content: right;text-align: right;margin:1vh;"><p class="timeText">Washington, D.C. </p> <p style="width:0.5vw;"></p>
-        <p id="currentTimeDC" class="timeText"> </p></div>
+  <section class="dcWeather" style="display:flex; flex-direction: column;  
+  text-align: right; justify-content: right; align-items: right;
+  bottom:40vh;pointer-events: none; overflow: visible; position:fixed;"referrerpolicy="no-referrer" rel="noreferrer">
+    <style>.timeText{text-align:center;color:white;font-family: 'Verdana';margin:0vw;margin-right: 1vw;}</style>
+  
+    <div style="display:flex;align-items: right;justify-content: right;text-align: center;margin:1vh;">
+        <p class="timeText glowBlack">Washington, D.C. </p>
+        <p id="currentTimeDC" class="timeText glowBlack"> </p>
+      </div>
 
 
-        <div style="height:5vh; margin:1vh;right:0vw; left:75vw; 
-        justify-content:right; text-align: right; align-content: right;" 
-        id="ww_ebbe656e9dc3a" 
+      <div id="ww_ebbe656e9dc3a" 
         v='1.3' loc='id' 
         a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl3907"],"font":"Verdana",
-        "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#000000",
-        "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107",
-        "cl_thund":"#FF5722","el_nme":3}'>
-        More forecasts: <a href="https://oneweather.org/atlanta/30_days/" id="ww_ebbe656e9dc3a_u" 
-        target="_blank" style="color:rgba(0,0,0,0);">Atlanta 30 day forecast</a></div>
+        "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#fff",
+        "cl_cloud":"rgba(25,25,25,0.25)","cl_persp":"rgba(255,255,255,1)","cl_sun":"#FFC107","cl_moon":"#fff",
+        "cl_thund":"#FF5722","el_nme":3}'
+        class="timeText glowBlack weatherHourly"
+        style="position: relative;overflow:visible;
+        text-align: right;margin-right:0vw; justify-content: right; align-items: center;">
+                 More forecasts:
+        <a href="https://oneweather.org/atlanta/30_days/" id="ww_ebbe656e9dc3a_u" 
+        target="_blank" style="color:rgba(0,0,0,0);">Atlanta 30 day forecast</a>
+      </div>
+      
       <script async src="https://app2.weatherwidget.org/js/?id=ww_ebbe656e9dc3a"></script>
     
-        <a class="weatherwidget-io" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
+    
+    <div style="overflow:visible;"> <a class="glowBlack weatherwidget-io weatherCasts" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
           data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)"
-          style="top:15vh;left:77vw;margin:1vh; width:21vw; 
-          justify-content: right; align-content: right;text-align: right;overflow: visible;" 
-          data-highcolor="#000000" data-lowcolor="#020202" 
-          data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
-          data-mode="Forecast" data-label_1=""
+          style="position: relative;overflow:visible;
+          text-align: center; justify-content: center; align-items: center;"
+          data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
+          data-raincolor="#42c8e7" 
+          data-cloudfill="rgba(0,0,0,0.25)" data-cloudcolor="rgba(255,255,255,0.05)"
+          data-mode="Forecast"     data-label_1="" data-suncolor="#FFC107"
           data-theme="original" data-icons="Climacons Animated"
-          data-shadow="rgba(0, 0, 0, 0.5)" 
+          data-shadow="rgba(0, 0, 0, 0.0)" 
+          data-fontcolor="white"
           data-font="Verdana" referrerpolicy="no-referrer" rel="noreferrer"></a>
           <script>
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
           </script>
-        </div>
-  
     </div>
-  
+    
+    <style>
+      @media (orientation: landscape) {
+        .dcWeather{left:75vw;width:25vw;top:0vh;margin-right:0.5vw;}
+        .weatherCasts{left:0vw; width:22vw;margin-right:0.5vw;
+          margin:1vw;align-items: center;justify-content: center;text-align: center;}
+        .sitez{top:50vh;}
+      }
+      @media (orientation: portrait) {
+        .dcWeather{left:60vw;top:-5vh;width:40vw;}
+        .weatherCasts{left:0vw; width:37vw;
+          margin:1vw;display:flex;align-items: center;justify-content: center;text-align: center;}
 
+        .sitez{top:0vh;bottom:95vh;margin-bottom:95vh;margin-top:0vh;}
+      }
+  </style>
+  
 </section>
 
+
 <section class="sitez">
+
+  
   <style>
 
 .shadowUpDown{filter: 
@@ -152,19 +182,19 @@ background-repeat: no-repeat;">
   drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65))  /*right*/
   drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}  /*left*/
 .glowLight{filter:
-  drop-shadow(0vw -0.25vw 0.25vw rgba(255, 242, 204,  0.33)) /*top*/
-  drop-shadow(0vw 0.25vw 0.25vw rgba(255, 242, 204,  0.33)) /*bottom*/
+  drop-shadow(0vw -0.25vw 0.25vw rgba(0, 242, 204,  0.33)) /*top*/
+  drop-shadow(0vw 0.25vw 0.25vw rgba(0, 242, 204,  0.33)) /*bottom*/
   drop-shadow(0.25vw 0vw 0.25vw rgba(255, 242, 204,  0.33))  /*right*/
   drop-shadow(-0.25vw 0vw 0.25vw rgba(255, 242, 204,  0.33));}  /*left*/
   .glowBlack{filter:
-  drop-shadow(0vw -0.25vw 0.25vw rgba(0, 0, 0,  0.33)) /*top*/
-  drop-shadow(0vw 0.25vw 0.25vw rgba(0, 0, 0,  0.33)) /*bottom*/
-  drop-shadow(0.25vw 0vw 0.25vw rgba(0, 0, 0,  0.33))  /*right*/
-  drop-shadow(-0.25vw 0vw 0.25vw rgba(0, 0, 0,  0.33));}  /*left*/
+  drop-shadow(0vw -0.2vw 0.1vw rgba(0, 0, 0,  0.25)) /*top*/
+  drop-shadow(0vw 0.2vw 0.1vw rgba(0, 0, 0,  0.25)) /*bottom*/
+  drop-shadow(-0.2vw 0vw 0.5vw rgba(0, 0, 0,  0.25))  /*right*/
+  drop-shadow(0.2vw 0vw 0.5vw rgba(0, 0, 0,  0.25));}  /*left*/
 .shadowLeftRightSide{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
 .shadowLeft{filter: drop-shadow(-5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
 .shadowRight{filter: drop-shadow(5vw 0vh 1vh rgba(0, 0, 0,  0.65));}
-.allSitez{width:40vw;position: fixed;left:30vw;top:0vh;margin-top: 25vh;}
+.allSitez{width:40vw;position: fixed;left:30vw;top:0vh;margin-top: 18vh;}
     @media (orientation: landscape) {
       .leftSitez{left:0vw;width:40vw;margin:1vw;}
       .rightSitez{left:50vw;width:40vw;margin:1vw;}
@@ -200,7 +230,7 @@ background-repeat: no-repeat;">
   </style>
   <!-- test-->
 
-<div class="allSitez centerAlignRow">
+<div class="allSitez centerAlignRow sitez">
 
   <div class= "centerAlignColumn leftSitez"referrerpolicy="no-referrer" rel="noreferrer">  
     <!-- six total icons to make a "J" -->
@@ -270,40 +300,54 @@ background-repeat: no-repeat;">
 
 </div>
 </section>
-<section style="display:flex; flex-direction: column; position:fixed; text-align: right; justify-content: right; align-items: right;
-bottom:10vh;top:50vh;width:35vw;pointer-events: none;overflow: visible;margin:1vh;">
 
-  <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;"><p class="timeText">Pecos, Texas: </p> <p style="width:0.5vw;"></p>
-  <p id="currentTimePecos" class="timeText"> </p></div>
+<section class="pecosWeather" style="display:flex; flex-direction: column; position:fixed; 
+text-align: left; justify-content: left; align-items: left;
+bottom:0vh;width:35vw;pointer-events: none;overflow: visible;">
+
+  <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;">
+  <p class="timeText glowBlack">Pecos, Texas: </p> 
+  <p id="currentTimePecos" class="timeText glowBlack"> </p></div>
   <div id="ww_42cb9d55e9128" v='1.3' loc='id' 
   a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl479"],"font":"Verdana",
-  "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#000000",
-  "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107",
+  "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#fff",
+  "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#fff",
   "cl_thund":"#FF5722","el_nme":3}'
-  style="text-align: right; justify-content: right;left:1vh; align-items: right;width:30vw;margin-bottom:1vh;margin-left: -1vh;overflow: hidden;">More forecasts: 
-    <a href="https://oneweather.org/atlanta/30_days/" 
-  id="ww_42cb9d55e9128_u" target="_blank">
+  class="timeText glowBlack"
+  style="position: relative;overflow:visible; color:rgba(255,255,255,1);
+  text-align: right; justify-content: right; align-items: center;">
+   More forecasts: 
+  <a href="https://oneweather.org/atlanta/30_days/" 
+  id="ww_42cb9d55e9128_u" target="_blank" style="color:rgba(0,0,0,0);">
   Weather forecast Atlanta 30 days
     </a>
   </div>
   <script async src="https://app2.weatherwidget.org/js/?id=ww_42cb9d55e9128">
   </script>
-<div style="overflow: visible;">  <a class="weatherwidget-io" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+
+  <div style="overflow: visible;">  <a class="glowBlack weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
     data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
-    style="margin:1vh; width:30vw;position: fixed;overflow:visible;
-    text-align: right; justify-content: right; align-items: right;margin:1vh;"
-    data-label_1=""
-    data-highcolor="#000000" data-lowcolor="#020202" 
-    data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)"
+    style="position: relative;overflow:visible;
+    text-align: center; justify-content: center; align-items: center;"
+    data-label_1="" data-suncolor="#FFC107"
+    data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
+    data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)" data-cloudcolor="rgba(255,255,255,0.05)"
     data-mode="Forecast"
     data-theme="original" data-icons="Climacons Animated"
-    data-shadow="rgba(0, 0, 0, 0.5)" 
+    data-shadow="rgba(0, 0, 0, 0)" 
     data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" ></a>
   </div>
 <script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
-
+  <style>
+    @media (orientation: landscape) {
+      .pecosWeather{top:50vh;width:30vw;left:5vw;}
+    }
+    @media (orientation: portrait) {
+      .pecosWeather{top:50vh;width:40vw;left:0vw;}
+    }
+</style>
 </section>
   
 

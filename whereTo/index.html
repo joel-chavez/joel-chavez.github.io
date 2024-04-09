@@ -96,8 +96,8 @@ background-repeat: no-repeat;">
 
 
   <section class="dcWeather" style="display:flex; flex-direction: column;  
-  text-align: right; justify-content: right; align-items: right;
-  bottom:40vh;pointer-events: none; overflow: visible; position:fixed;"referrerpolicy="no-referrer" rel="noreferrer">
+  text-align: right; justify-content: right; align-items: right;background-color: rgba(0, 0, 0,  0.25);
+  bottom:30vh;pointer-events: none; overflow: visible; position:fixed;"referrerpolicy="no-referrer" rel="noreferrer">
     <style>.timeText{text-align:center;color:white;font-family: 'Verdana';margin:0vw;margin-right: 1vw;}</style>
   
     <div style="display:flex;align-items: right;justify-content: right;text-align: center;margin:1vh;">
@@ -123,13 +123,13 @@ background-repeat: no-repeat;">
       <script async src="https://app2.weatherwidget.org/js/?id=ww_ebbe656e9dc3a"></script>
     
     
-    <div style="overflow:visible;"> <a class="glowBlack weatherwidget-io weatherCasts" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
+    <div style="overflow:visible;"> <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
           data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)"
-          style="position: relative;overflow:visible;
+          style="position: relative;overflow:hidden;
           text-align: center; justify-content: center; align-items: center;"
           data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
           data-raincolor="#42c8e7" 
-          data-cloudfill="rgba(0,0,0,0.25)" data-cloudcolor="rgba(255,255,255,0.05)"
+          data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
           data-mode="Forecast"     data-label_1="" data-suncolor="#FFC107"
           data-theme="original" data-icons="Climacons Animated"
           data-shadow="rgba(0, 0, 0, 0.0)" 
@@ -142,13 +142,13 @@ background-repeat: no-repeat;">
     
     <style>
       @media (orientation: landscape) {
-        .dcWeather{left:75vw;width:25vw;top:0vh;margin-right:0.5vw;}
+        .dcWeather{left:75vw;width:24vw;top:0vh;margin-right:0.5vw;}
         .weatherCasts{left:0vw; width:22vw;margin-right:0.5vw;
           margin:1vw;align-items: center;justify-content: center;text-align: center;}
         .sitez{top:50vh;}
       }
       @media (orientation: portrait) {
-        .dcWeather{left:60vw;top:-5vh;width:40vw;}
+        .dcWeather{left:55vw;top:-5vh;width:44vw;height:25vh;}
         .weatherCasts{left:0vw; width:37vw;
           margin:1vw;display:flex;align-items: center;justify-content: center;text-align: center;}
 
@@ -301,9 +301,9 @@ background-repeat: no-repeat;">
 </div>
 </section>
 
-<section class="pecosWeather" style="display:flex; flex-direction: column; position:fixed; 
+<section class="pecosWeather" style="display:flex; flex-direction: column; position:fixed; background-color: rgba(0, 0, 0,  0.25);
 text-align: left; justify-content: left; align-items: left;
-bottom:0vh;width:35vw;pointer-events: none;overflow: visible;">
+bottom:0vh;pointer-events: none;overflow: visible;">
 
   <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;">
   <p class="timeText glowBlack">Pecos, Texas: </p> 
@@ -325,16 +325,17 @@ bottom:0vh;width:35vw;pointer-events: none;overflow: visible;">
   <script async src="https://app2.weatherwidget.org/js/?id=ww_42cb9d55e9128">
   </script>
 
-  <div style="overflow: visible;">  <a class="glowBlack weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+  <div style="overflow: visible;">  <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
     data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
     style="position: relative;overflow:visible;
     text-align: center; justify-content: center; align-items: center;"
     data-label_1="" data-suncolor="#FFC107"
     data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
-    data-raincolor="#42c8e7" data-cloudfill="rgba(0,0,0,0.25)" data-cloudcolor="rgba(255,255,255,0.05)"
+    data-raincolor="#42c8e7" 
+    data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
     data-mode="Forecast"
     data-theme="original" data-icons="Climacons Animated"
-    data-shadow="rgba(0, 0, 0, 0)" 
+    data-shadow="rgba(0, 0, 0, 0.0)" 
     data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" ></a>
   </div>
 <script>
@@ -342,10 +343,10 @@ bottom:0vh;width:35vw;pointer-events: none;overflow: visible;">
 </script>
   <style>
     @media (orientation: landscape) {
-      .pecosWeather{top:50vh;width:30vw;left:5vw;}
+      .pecosWeather{height:40vh;top:50vh;width:25vw;left:5vw;}
     }
     @media (orientation: portrait) {
-      .pecosWeather{top:50vh;width:40vw;left:0vw;}
+      .pecosWeather{top:60vh;height:25vh;width:44vw;left:1vw;}
     }
 </style>
 </section>

@@ -70,7 +70,7 @@ background-repeat: no-repeat;">
       document.getElementById('searchQuery').addEventListener('keypress', function(event) {
         if (event.keyCode === 13) { // Check if both Control is pressed and Enter
           event.preventDefault(); // Prevent the default action
-          redirectToStartPageSearch(); // Call the function for Control+Enter
+          redirectToGoogleSearch(); // Call the function for Control+Enter
         }
       });
     </script>
@@ -108,7 +108,15 @@ background-repeat: no-repeat;">
         } 
       </style>
   </header>
+  <div class="spacerTop" >
 
+
+  </div>
+    <style>
+  .spacerTop{height:10vh;}
+
+
+    </style>
 
   <section class="dcWeather" style="display:flex; flex-direction: column;  
   text-align: right; justify-content: right; align-items: right;background-color: rgba(0, 0, 0,  0.25);

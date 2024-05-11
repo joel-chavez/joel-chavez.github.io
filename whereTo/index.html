@@ -28,13 +28,15 @@ background-image: url('west-tx-usa-sat.png'); text-decoration: bold;
 background-attachment: fixed;
 background-repeat: no-repeat;">
 
-  <header class="header centerAlignRow" style="top:0vh;position:relative;display:flex;
-  justify-content: center;outline: none;" referrerpolicy="no-referrer" rel="noreferrer">
+  <header class="header centerAlignColumn" style="top:0vh;position:fixed;display:flex;
+  justify-content: center;outline: none;width:100vw;" referrerpolicy="no-referrer" rel="noreferrer">
       <div class="searchEngineBar"><input type="text" 
           id="searchQuery" 
-          placeholder="  Type search, then click engine below.... 'Enter' = = Startpage search" 
-          style="outline: none;text-decoration: white; background-color: rgba(122,122,122,0.5);color:red; width:50vw;height:1.5vh;text-align: center;justify-content: center;align-items: center;">
-      <button class="buttonz"style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0);outline:none;" onclick="redirectToGoogleSearch()"> 
+          placeholder="  Type search, then click engine below.... 'Enter' = = Google search" 
+          style="outline: none;text-decoration: white; background-color: rgba(0,0,0,0.5);
+                color:black; left:2.5vw; width:100vw; height:3vh; text-align:center; justify-content:center; align-items:center;">
+      </div>
+      <div class="centerAlignRow"> <button class="buttonz"style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0);outline:none;" onclick="redirectToGoogleSearch()"> 
         <img class="searchEngine buttonz" src="logoSearchGoogle.png" referrerpolicy="no-referrer" rel="noreferrer"></button>
       <button class="buttonz" style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0); outline:none;"onclick="redirectToDuckDuckGoSearch()"> 
         <img class="searchEngine buttonz" src="logoSearchDuckDuckGo.png" referrerpolicy="no-referrer" rel="noreferrer"></button>
@@ -46,8 +48,10 @@ background-repeat: no-repeat;">
         }
         .buttonz:hover{animation: scaleUp 0.1s ease-in-out;}
         @keyframes scaleUp {from{opacity:1;}to{opacity:0.9;}}
-        </style>
-    </div>
+
+        input::placeholder{color:black;opacity:1;}
+        </style></div>
+    
 
     
 
@@ -90,8 +94,8 @@ background-repeat: no-repeat;">
       @media (orientation: landscape) {
           .siteIcon{height:6vh;max-height:6vh}
           .betweenIconSpacer{height:12.5vh;}
-          header{width:30vw;align-items: center;justify-content: center;text-align: center;margin-left:35vw;}
-          .searchEngineBar{width:40vw;display:flex;align-items: center;}
+          header{width:100vw;align-items: center;justify-content: center;text-align: center;}
+          .searchEngineBar{left:2.5vw;width:95vw;height:3vh;display:flex;align-items: center;}
           .searchEngine{display:flex;align-items: center;width:5vw;margin-top:0.1vh;margin-bottom:0vh;}
           .weatherwidget-io{height:5vh;overflow:visible;}
           .dcWeather{margin-right:1vh;margin-top:30vh;}

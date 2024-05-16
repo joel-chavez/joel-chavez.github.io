@@ -29,12 +29,12 @@ background-attachment: fixed;
 background-repeat: no-repeat;">
 
   <header class="header centerAlignColumn" style="top:0vh;position:fixed;display:flex;
-  justify-content: center;outline: none;width:100vw;" referrerpolicy="no-referrer" rel="noreferrer">
+  justify-content: center;outline: none;" referrerpolicy="no-referrer" rel="noreferrer">
       <div class="searchEngineBar"><input type="text" 
           id="searchQuery" 
-          placeholder="  Type search, then click engine below.... 'Enter' = = Google search" 
-          style="outline: none;text-decoration: white; background-color: rgba(0,0,0,0.5);
-                color:black; left:2.5vw; width:100vw; height:3vh; text-align:center; justify-content:center; align-items:center;">
+          placeholder="             https://realjoelchavez/whereTo" 
+          style="outline: none;text-decoration: white; background-color: rgba(43,43,43,1);
+                color:black; height:3vh; width:72.5vw;text-align:left; justify-content:center; align-items:center;border-radius: 15px; ">
       </div>
       <div class="centerAlignRow"> <button class="buttonz"style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0);outline:none;" onclick="redirectToGoogleSearch()"> 
         <img class="searchEngine buttonz" src="logoSearchGoogle.png" referrerpolicy="no-referrer" rel="noreferrer"></button>
@@ -49,7 +49,7 @@ background-repeat: no-repeat;">
         .buttonz:hover{animation: scaleUp 0.1s ease-in-out;}
         @keyframes scaleUp {from{opacity:1;}to{opacity:0.9;}}
 
-        input::placeholder{color:black;opacity:1;}
+        input::placeholder{color:rgb(146,146,146);opacity:1;}
         </style></div>
     
 
@@ -94,8 +94,8 @@ background-repeat: no-repeat;">
       @media (orientation: landscape) {
           .siteIcon{height:6vh;max-height:6vh}
           .betweenIconSpacer{height:12.5vh;}
-          header{width:100vw;align-items: center;justify-content: center;text-align: center;}
-          .searchEngineBar{left:2.5vw;width:95vw;height:3vh;display:flex;align-items: center;}
+          header{width:75vw;left:5vw;align-items: center;justify-content: center;text-align: center;}
+          .searchEngineBar{width:100vw;height:3vh;}
           .searchEngine{display:flex;align-items: center;width:5vw;margin-top:0.1vh;margin-bottom:0vh;}
           .weatherwidget-io{height:5vh;overflow:visible;}
           .dcWeather{margin-right:1vh;margin-top:30vh;}

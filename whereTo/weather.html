@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/images/nds.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whereTo?</title>  
+    <script>
+      const timeZone = 'America/New_York';
+
+// Create a new Date object for the current time
+const now = new Date();
+
+// Format the date and time in the specified time zone
+const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+  timeZone: timeZone,
+  timeStyle: 'long',
+  dateStyle: 'medium'
+}).format(now);
+
+console.log(formattedDateTime);
+    </script>
+</head>
+
+<style>.timeText{
+    text-align:center;
+    color:white;
+    font-family: 'Verdana';
+    margin:0vw;
+    margin-right: 1vw;}
+</style>
+
+<body style="padding:0;margin:0;background-color:rgba(77, 183, 250, 0.485); 
+text-decoration: bold;
+background-attachment: fixed;
+background-repeat: no-repeat;">
+
+<section class="pecosWeather" style="display:flex; flex-direction: column; background-color: rgba(0, 0, 0, 1);
+text-align: left; justify-content: left; align-items: left;
+bottom:0vh;pointer-events: none;overflow: visible;">
+
+  <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;">
+  <p class="timeText glowBlack">Pecos, Texas: </p> 
+  <p id="currentTimePecos" class="timeText glowBlack"> </p></div>
+  <div id="ww_42cb9d55e9128" v='1.3' loc='id' 
+  a='{"t":"horizontal","lang":"en","sl_lpl":1,"ids":["wl479"],"font":"Verdana",
+  "sl_ics":"one_a","sl_sot":"fahrenheit","cl_bkg":"rgba(0,0,0,0)","cl_font":"#fff",
+  "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#fff",
+  "cl_thund":"#FF5722","el_nme":3}'
+  class="timeText glowBlack"
+  style="position: relative;overflow:visible; color:rgba(255,255,255,1);height:100vh;width:100vw;
+  text-align: right; justify-content: right; align-items: center;">
+   More forecasts: 
+  <a href="https://oneweather.org/atlanta/30_days/" 
+  id="ww_42cb9d55e9128_u" target="_blank" style="color:rgba(0,0,0,0);">
+  Weather forecast Atlanta 30 days
+    </a>
+  </div>
+  <script async src="https://app2.weatherwidget.org/js/?id=ww_42cb9d55e9128">
+  </script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const updateTime = () => {
+        const timeZone = 'America/New_York'; // Set your desired timezone
+        const now = new Date();
+        const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: timeZone,
+            timeStyle: 'medium'}).format(now);
+
+        document.getElementById('currentTimeDC').textContent = formattedDateTime;
+    };
+
+    updateTime(); // Update time immediately
+    setInterval(updateTime, 1000); // Update time every 1000 milliseconds (1 second)
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const updateTime = () => {
+        const timeZone = 'America/Chicago'; // Set your desired timezone
+        const now = new Date();
+        const formattedDateTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: timeZone,
+            timeStyle: 'medium'}).format(now);
+        const pecosForm = ('Current Time is:',formattedDateTime)
+
+        document.getElementById('currentTimePecos').textContent = formattedDateTime;
+    };
+
+    updateTime(); // Update time immediately
+    setInterval(updateTime, 1000); // Update time every 1000 milliseconds (1 second)
+  });
+</script>
+  <div style="overflow: visible;">  <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+    data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
+    style="position: relative;overflow:visible;
+    text-align: center; justify-content: center; align-items: center;"
+    data-label_1="" data-suncolor="#FFC107"
+    data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
+    data-raincolor="#42c8e7" 
+    data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
+    data-mode="Forecast"
+    data-theme="original" data-icons="Climacons Animated"
+    data-shadow="rgba(0, 0, 0, 0.0)" 
+    data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" ></a>
+  </div>
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+  <style>
+    @media (orientation: landscape) {
+      .pecosWeather{height:100vh;width:100vw;}
+    }
+    @media (orientation: portrait) {
+        .pecosWeather{height:100vh;width:100vw;}
+    }
+</style>
+</section>
+</body>
+</html>

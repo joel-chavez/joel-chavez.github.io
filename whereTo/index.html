@@ -80,7 +80,9 @@ background-repeat: no-repeat;">
         }
       });
     </script>
-    <style>
+
+
+<style>
       .body{z-index:1;}
       .bgGradient{background:linear-gradient(90deg,rgba(255,255,255,0.25),rgba(255,255,255,0.4),rgba(255,255,255,0.5),rgba(255,255,255,0.4),rgba(255,255,255,0.25));}
       .siteIcon{z-index:5;max-width:75vw;}
@@ -114,12 +116,53 @@ background-repeat: no-repeat;">
         } 
       </style>
   </header>
-  <div class="spacerTop" >
-
-
+  <div class="spacerTop" style="height:10vh;">
   </div>
+
+  <section id="conversionTable" style="margin-left: 2vw; ">
+      <script>
+            function inchesToMM() {
+                const inches = parseFloat(document.getElementById('inches').value);
+                if (!isNaN(inches)) {
+                    const mm = inches * 25.4;
+                    document.getElementById('mmResult').innerText = mm.toFixed(2) + ' mm';
+                } else {
+                    document.getElementById('mmResult').innerText = '';
+                }
+            }
+    
+            function mmToInches() {
+                const mm = parseFloat(document.getElementById('mm').value);
+                if (!isNaN(mm)) {
+                    const inches = mm / 25.4;
+                    document.getElementById('inchesResult').innerText = inches.toFixed(2) + ' inches';
+                } else {
+                    document.getElementById('inchesResult').innerText = '';
+                }
+            }
+      </script>
+      <div style="display:flex; flex-direction: row; align-items:center; ">
+        <input type="number" id="inches" step="0.01" placeholder="in. to mm" required oninput="inchesToMM()"
+          style="color:black; width:5vw;font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: large;" >
+        <p class="conversionResult" id="mmResult"></p>
+      </div>
+      <div style="display:flex; flex-direction: row; align-items:center; ">
+        <input type="number" id="mm" step="0.1" placeholder="mm to in." required oninput="mmToInches()"
+          style="color:black; width:5vw;font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: large;" >
+        <p class="conversionResult" id="inchesResult"></p>
+      </div>
+      <style>
+        .conversionResult{
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: large;
+        }
+      </style>
+    </section>
+
     <style>
-  .spacerTop{height:10vh;}
+  .spacerTop{}
 
 
     </style>

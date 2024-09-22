@@ -34,10 +34,11 @@ background-repeat: no-repeat;">
           id="searchQuery" 
           placeholder="             https://realjoelchavez/whereTo" 
           style="outline: none;text-decoration: white; background-color: rgba(43,43,43,1);
-                color:white; height:3vh; width:72.5vw; justify-content:center; align-items:center;border-radius: 15px; ">
-      <style>input{
-        color: white;
-   }</style></div>
+                color:white; height:4vh; width:72.5vw; justify-content:center; align-items:center;border-radius: 15px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: large; ">
+        <style> input{color: white;}</style>
+      </div>
       <div class="centerAlignRow"> <button class="buttonz"style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0);outline:none;" onclick="redirectToGoogleSearch()"> 
         <img class="searchEngine buttonz" src="logoSearchGoogle.png" referrerpolicy="no-referrer" rel="noreferrer"></button>
       <button class="buttonz" style="background-color: rgba(0,0,0,0);color:rgba(0,0,0,0); outline:none;"onclick="redirectToDuckDuckGoSearch()"> 
@@ -119,7 +120,7 @@ background-repeat: no-repeat;">
   <div class="spacerTop" style="height:10vh;">
   </div>
 
-  <section id="conversionTable" style="margin-left: 2vw; ">
+  <section id="conversionTable" style="margin-left: 2vw; width:25vw;background-color: rgba(0, 0, 0,  0.25) ">
       <script>
             function inchesToMM() {
                 const inches = parseFloat(document.getElementById('inches').value);
@@ -141,22 +142,29 @@ background-repeat: no-repeat;">
                 }
             }
       </script>
+      <div style="text-align: center; display:flex; flex-direction: row; align-items:center; ">
+        <p class="conversionText" style="text-align: center;font-weight: bolder;"> Convert
+
+        </p>
+      </div>
       <div style="display:flex; flex-direction: row; align-items:center; ">
         <input type="number" id="inches" step="0.01" placeholder="in. to mm" required oninput="inchesToMM()"
-          style="color:black; width:5vw;font-family: Verdana, Geneva, Tahoma, sans-serif;
-          font-size: large;" >
-        <p class="conversionResult" id="mmResult"></p>
+          style="background-color:black; color:white; margin-left: 2vw; width: 6.5vw;font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: medium;" >
+        <p class="conversionText" id="mmResult"></p>
       </div>
       <div style="display:flex; flex-direction: row; align-items:center; ">
         <input type="number" id="mm" step="0.1" placeholder="mm to in." required oninput="mmToInches()"
-          style="color:black; width:5vw;font-family: Verdana, Geneva, Tahoma, sans-serif;
-          font-size: large;" >
-        <p class="conversionResult" id="inchesResult"></p>
+          style="background-color:black; color:white; margin-left: 2vw; width: 6.5vw; font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: medium;" >
+        <p class="conversionText" id="inchesResult"></p>
       </div>
       <style>
-        .conversionResult{
+        .conversionText{
           font-family: Verdana, Geneva, Tahoma, sans-serif;
-          font-size: large;
+          font-size: medium;
+          color:white;
+          margin-left: 1vw;
         }
       </style>
     </section>
@@ -168,11 +176,11 @@ background-repeat: no-repeat;">
     </style>
 
   <section class="dcWeather" style="display:flex; flex-direction: column;  
-  text-align: right; justify-content: right; align-items: right;background-color: rgba(0, 0, 0,  0.25);
+  text-align: right; justify-content: right; align-items: right;
   bottom:30vh;pointer-events: none; overflow: visible; position:fixed;"referrerpolicy="no-referrer" rel="noreferrer">
     <style>.timeText{text-align:center;color:white;font-family: 'Verdana';margin:0vw;margin-right: 1vw;}</style>
   
-    <div style="display:flex;align-items: right;justify-content: right;text-align: center;margin:1vh;">
+    <div style="display:flex;align-items: right;justify-content: right;text-align: center;background-color: rgba(0, 0, 0,  0.25);">
         <p class="timeText glowBlack">Washington, D.C. </p>
         <p id="currentTimeDC" class="timeText glowBlack"> </p>
       </div>
@@ -186,7 +194,7 @@ background-repeat: no-repeat;">
         "cl_thund":"#FF5722","el_nme":3}'
         class="timeText glowBlack weatherHourly"
         style="position: relative;overflow:visible;
-        text-align: right;margin-right:0vw; justify-content: right; align-items: center;">
+        text-align: right;margin-right:0vw; justify-content: right; align-items: center;background-color: rgba(0, 0, 0,  0.25);">
                  More forecasts:
         <a href="https://oneweather.org/atlanta/30_days/" id="ww_ebbe656e9dc3a_u" 
         target="_blank" style="color:rgba(0,0,0,0);">Atlanta 30 day forecast</a>
@@ -195,10 +203,11 @@ background-repeat: no-repeat;">
       <script async src="https://app2.weatherwidget.org/js/?id=ww_ebbe656e9dc3a"></script>
     
     
-    <div style="overflow:visible;"> <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
+    <div style="overflow:visible;"> 
+      <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/38d92n77d07/20007/?unit=us" target="_blank"
           data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(0, 0, 0, 0)"
-          style="position: relative;overflow:hidden;
-          text-align: center; justify-content: center; align-items: center;"
+          style="position: relative; overflow:hidden;
+          text-align: center; justify-content: center; align-items: center;background-color: rgba(0, 0, 0,  0.25);"
           data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
           data-raincolor="#42c8e7" 
           data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
@@ -206,22 +215,23 @@ background-repeat: no-repeat;">
           data-theme="original" data-icons="Climacons Animated"
           data-shadow="rgba(0, 0, 0, 0.0)" 
           data-fontcolor="white"
-          data-font="Verdana" referrerpolicy="no-referrer" rel="noreferrer"></a>
-          <script>
+          data-font="Verdana" referrerpolicy="no-referrer" rel="noreferrer">
+      </a>
+        <script>
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-          </script>
+        </script>
     </div>
     
     <style>
       @media (orientation: landscape) {
         .dcWeather{left:75vw;width:24vw;top:0vh;margin-right:0.5vw;}
-        .weatherCasts{left:0vw; width:22vw;margin-right:0.5vw;
-          margin:1vw;align-items: center;justify-content: center;text-align: center;}
+        .weatherCasts{left:0vw; width:24vw;margin-right:0vw;
+          margin:0vw;align-items: center;justify-content: center;text-align: center;}
         .sitez{top:50vh;}
       }
       @media (orientation: portrait) {
         .dcWeather{left:55vw;top:-5vh;width:44vw;height:25vh;}
-        .weatherCasts{left:0vw; width:37vw;
+        .weatherCasts{left:0vw; width:44vw;
           margin:1vw;display:flex;align-items: center;justify-content: center;text-align: center;}
 
         .sitez{top:0vh;bottom:95vh;margin-bottom:95vh;margin-top:0vh;}
@@ -373,11 +383,11 @@ background-repeat: no-repeat;">
 </div>
 </section>
 
-<section class="pecosWeather" style="display:flex; flex-direction: column; position:fixed; background-color: rgba(0, 0, 0,  0.25);
+<section class="pecosWeather" style="display:flex; flex-direction: column; position:fixed;
 text-align: left; justify-content: left; align-items: left;
 bottom:0vh;pointer-events: none;overflow: visible;">
 
-  <div style="display:flex;align-items: left;justify-content: left;text-align: left;margin:1vh;">
+  <div style="display:flex;align-items: left;justify-content: left;text-align: left; background-color: rgba(0, 0, 0,  0.25);">
   <p class="timeText glowBlack">Pecos, Texas: </p> 
   <p id="currentTimePecos" class="timeText glowBlack"> </p></div>
   <div id="ww_42cb9d55e9128" v='1.3' loc='id' 
@@ -386,7 +396,7 @@ bottom:0vh;pointer-events: none;overflow: visible;">
   "cl_cloud":"rgba(0,0,0,0.25)","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#fff",
   "cl_thund":"#FF5722","el_nme":3}'
   class="timeText glowBlack"
-  style="position: relative;overflow:visible; color:rgba(255,255,255,1);
+  style="position: relative;overflow:visible; background-color: rgba(0, 0, 0,  0.25); color:rgba(255,255,255,1);
   text-align: right; justify-content: right; align-items: center;">
    More forecasts: 
   <a href="https://oneweather.org/atlanta/30_days/" 
@@ -397,28 +407,30 @@ bottom:0vh;pointer-events: none;overflow: visible;">
   <script async src="https://app2.weatherwidget.org/js/?id=ww_42cb9d55e9128">
   </script>
 
-  <div style="overflow: visible;">  <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
-    data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
-    style="position: relative;overflow:visible;
-    text-align: center; justify-content: center; align-items: center;"
-    data-label_1="" data-suncolor="#FFC107"
-    data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
-    data-raincolor="#42c8e7" 
-    data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
-    data-mode="Forecast"
-    data-theme="original" data-icons="Climacons Animated"
-    data-shadow="rgba(0, 0, 0, 0.0)" 
-    data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" ></a>
+  <div style="overflow: visible;background-color: rgba(0, 0, 0,  0.25);">  
+    <a class="weatherwidget-io weatherCasts" href="https://forecast7.com/en/31d42n103d49/pecos/?unit=us" 
+      data-basecolor="rgba(0, 0, 0, 0.0)" data-accent="rgba(0, 0, 0, 0.0)"
+      style="position: relative;
+      text-align: center; justify-content: center; align-items: center;"
+      data-label_1="" data-suncolor="#FFC107"
+      data-highcolor="lightcoral" data-lowcolor="rgb(205,255,255)" 
+      data-raincolor="#42c8e7" 
+      data-cloudfill="rgba(0,0,0,0.5)" data-cloudcolor="rgba(0,0,0,0.1)"
+      data-mode="Forecast"
+      data-theme="original" data-icons="Climacons Animated"
+      data-shadow="rgba(0, 0, 0, 0.0)" 
+      data-font="Verdana"referrerpolicy="no-referrer" rel="noreferrer" >
+    </a>
   </div>
 <script>
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
   <style>
     @media (orientation: landscape) {
-      .pecosWeather{height:40vh;top:50vh;width:25vw;left:5vw;}
+      .pecosWeather{height:50vh;top:50vh;width:24vw;left:12vw;}
     }
     @media (orientation: portrait) {
-      .pecosWeather{top:60vh;height:25vh;width:44vw;left:1vw;}
+      .pecosWeather{top:50vh;height:25vh;width:44vw;left:1vw;}
     }
 </style>
 </section>
